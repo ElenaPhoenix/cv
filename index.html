@@ -258,6 +258,37 @@
       font-weight: 600;
     }
 
+    /* Стили для аккордеона */
+    details.experience-item {
+      border-bottom: 1px solid var(--color-bg-light);
+      padding-bottom: 15px;
+    }
+    details.experience-item:last-child {
+      border-bottom: none;
+    }
+    details.experience-item summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    details.experience-item summary::-webkit-details-marker {
+      display: none;
+    }
+    details.experience-item summary::after {
+      content: '▼';
+      font-size: 0.8rem;
+      color: var(--color-turquoise);
+      transition: transform 0.2s;
+    }
+    details.experience-item[open] summary::after {
+      transform: rotate(180deg);
+    }
+    details.experience-item .item-subtitle {
+      margin-top: 10px;
+    }
+
     @media (max-width: 768px) {
       #section-resume { padding: 20px 10px; }
       .resume-container { flex-direction: column; }
@@ -295,7 +326,7 @@
         <h3 class="section-title">Навыки</h3>
         <div class="skill-group">
           <div class="skill-name">Data Engineering & Code</div>
-          <div class="skill-desc">Python (Pandas, NumPy), SQL (PostgreSQL, ClickHouse), API, Docker, Git</div>
+          <div class="skill-desc">Python (Pandas, NumPy), SQL (PostgreSQL, ClickHouse), API, Docker, Git, JavaScript</div>
         </div>
         <div class="skill-group">
           <div class="skill-name">Analytics & BI</div>
@@ -304,6 +335,10 @@
         <div class="skill-group">
           <div class="skill-name">Automation & Management</div>
           <div class="skill-desc">n8n, BPMN, Jira, Confluence, Agile</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-name">AI & NLP</div>
+          <div class="skill-desc">с</div>
         </div>
       </div>
       
@@ -334,27 +369,26 @@
       <div class="content-section">
         <h3 class="content-title">Пет-проекты</h3>
         
-        <!-- Data Alchemist Ecosystem -->
         <div class="experience-item">
           <div class="item-header">Data Alchemist Ecosystem</div>
-          <div class="item-subtitle">Автор и архитектор | 2026 - наст. время</div>
+          <div class="item-subtitle">Автор и архитектор | 2026</div>
           <p class="content-text whitespace-pre">
-<b>Задача:</b> Создать единую цифровую экосистему для демонстрации навыков аналитика, управления знаниями и разработки.
-<b>Решение:</b> Объединила CV-сайт, базу знаний (Confluence), таск-трекер (Jira) и BI-дашборд (DataLens) в единый взаимосвязанный пайплайн. Разработала архитектуру данных, настроила сбор метрик (Яндекс.Метрика, Google Analytics) и описала кейсы.
+<b>Проблема:</b> Профессиональные артефакты (CV, GitHub, Confluence, Jira, DataLens, LinkedIn) существовали разрозненно, что затрудняло демонстрацию комплексных навыков аналитика и системного подхода.
+<b>Задача:</b> Спроектировать и реализовать единую цифровую экосистему для презентации компетенций.
+<b>Решение:</b> Объединила CV-сайт, базу знаний (Confluence), таск-трекер (Jira), BI-дашборд (DataLens), профиль GitHub и страницу LinkedIn в единый взаимосвязанный пайплайн. Настроила сбор метрик (Яндекс.Метрика, Google Analytics) и описала кейсы.
+<b>Результат:</b> Создана единая точка входа для рекрутеров с прозрачной навигацией и сквозной аналитикой.
 <b>Стек:</b> HTML/CSS/JS, Confluence, Jira, Yandex DataLens, Yandex Metrika, Google Tag Manager.
-<b>Ссылки на компоненты системы:</b>
-- <a href="https://listenshareanalytics.atlassian.net/wiki/spaces/bd/overview" target="_blank">Data Alchemist Hub (Confluence)</a>
-- <a href="https://listenshareanalytics.atlassian.net/jira/software/projects/SCRUM/boards/1?filter=&groupBy=none&atlOrigin=eyJpIjoiYmNlMzEwNGQzNGE1NDNjZmE4ZGExZTU3Y2U1NGFjNTUiLCJwIjoiaiJ9" target="_blank">Data Alchemist Lab (Jira)</a>
-- <a href="https://datalens.ru/hckh8b6awmtc0?_no_controls=1" target="_blank">Resume Insights (DataLens)</a></p>
+<b>Ссылка:</b> <a href="https://elenaphoenix.github.io/cv/" target="_blank">elenaphoenix.github.io/cv</a></p>
         </div>
 
-        <!-- HH Assistant -->
         <div class="experience-item">
           <div class="item-header">HH Assistant: AI-Pipeline для поиска работы</div>
-          <div class="item-subtitle">Разработчик | октябрь 2026 - ноябрь 2026</div>
+          <div class="item-subtitle">Разработчик | Октябрь 2026 - Ноябрь 2026 (завершен)</div>
           <p class="content-text whitespace-pre">
-<b>Задача:</b> Автоматизировать рутинный поиск вакансий, скоринг релевантности и отправку откликов.
+<b>Проблема:</b> Ручной перебор тысяч нерелевантных вакансий и потеря времени на написание шаблонных сопроводительных писем.
+<b>Задача:</b> Автоматизировать ETL-процесс поиска, скоринга вакансий и отправки откликов.
 <b>Решение:</b> Разработала ETL-пайплайн (Python), интеграция с API hh.ru, умный фильтр на основе расстояния Левенштейна, генерация писем через GigaChat API, дельта-синхронизация и хранение данных в PostgreSQL. Покрытие тестами - 107 шт.
+<b>Результат:</b> Полностью автоматизированный процесс от сбора вакансий до трекинга ответов HR.
 <b>Стек:</b> Python, PostgreSQL, GigaChat API, Docker, pytest, ThreadPoolExecutor.
 <b>Ссылка:</b> <a href="https://github.com/ElenaPhoenix/hh-assistant" target="_blank">GitHub Repository</a></p>
         </div>
@@ -363,8 +397,8 @@
       <div class="content-section">
         <h3 class="content-title">Опыт работы</h3>
         
-        <div class="experience-item">
-          <div class="item-header">NDA (международная IT-компания, GameFi), Москва | Февраль 2023 - наст. время</div>
+        <details class="experience-item">
+          <summary class="item-header">NDA (международная IT-компания, GameFi), Москва | Февраль 2023 - наст. время</summary>
           <div class="item-subtitle">Аналитик данных</div>
           <p class="content-text whitespace-pre">
 <b>Обязанности и достижения:</b>
@@ -376,52 +410,52 @@
 - Обучила 6 сотрудников работе с BI-инструментами.
 
 <b>Инструменты:</b> SQL, Python (NumPy, Pandas), API, Google Sheets, Google Data Studio, Excel, Yandex DataLens, n8n, Jira, Confluence, Agile.</p>
-        </div>
+        </details>
         
-        <div class="experience-item">
-          <div class="item-header">Комус, Москва | Июнь 2025 - Август 2025 (3 месяца)</div>
+        <details class="experience-item">
+          <summary class="item-header">Комус, Москва | Июнь 2025 - Август 2025 (3 месяца)</summary>
           <div class="item-subtitle">Менеджер по управлению ресурсами</div>
           <p class="content-text whitespace-pre">
 <b>Обязанности:</b> Подготовка отчетности (план-факт) в Excel и SAP BO. Аудит Jira (трудозатраты, задачи). Анализ доступности ресурсов. Ведение справочников в Confluence.
 <b>Достижения:</b> Привела документы в Confluence к единой структуре.
 <b>Инструменты:</b> Excel (Power Pivot, Power Query), SAP BO, Jira, Confluence.</p>
-        </div>
+        </details>
 
-        <div class="experience-item">
-          <div class="item-header">ПОиК ПиО ГУ МВД РФ, Москва | Январь 2020 - Октябрь 2021</div>
+        <details class="experience-item">
+          <summary class="item-header">ПОиК ПиО ГУ МВД РФ, Москва | Январь 2020 - Октябрь 2021</summary>
           <div class="item-subtitle">Системный аналитик</div>
           <p class="content-text whitespace-pre">
 <b>Обязанности:</b> Предобработка, очистка и подготовка данных. Перевод данных с бумажных носителей в электронный вид.
 <b>Достижения:</b> Скорость поиска информации улучшилась с нескольких дней до нескольких минут.
 <b>Инструменты:</b> MS Office, внутренние базы данных.</p>
-        </div>
+        </details>
 
-        <div class="experience-item">
-          <div class="item-header">Т-Банк, Москва | Май 2019 - Октябрь 2019</div>
+        <details class="experience-item">
+          <summary class="item-header">Т-Банк, Москва | Май 2019 - Октябрь 2019</summary>
           <div class="item-subtitle">Специалист чат-поддержки</div>
           <p class="content-text whitespace-pre">
 <b>Обязанности:</b> Многоканальная поддержка (до 5 чатов) с соблюдением SLA. Решение сложных запросов.
 <b>Достижения:</b> Положительные отзывы на Банки.ру, премирование.
 <b>Инструменты:</b> Jira, CRM-системы.</p>
-        </div>
+        </details>
 
-        <div class="experience-item">
-          <div class="item-header">ХимПартнеры, Россия | Январь 2018 - Июль 2018</div>
+        <details class="experience-item">
+          <summary class="item-header">ХимПартнеры, Россия | Январь 2018 - Июль 2018</summary>
           <div class="item-subtitle">Операционный менеджер</div>
           <p class="content-text whitespace-pre">
 <b>Обязанности:</b> Координация отгрузок и логистики. Подготовка документов для таможни.
 <b>Достижения:</b> Все грузы поставлены в срок.
 <b>Инструменты:</b> MS Office.</p>
-        </div>
+        </details>
 
-        <div class="experience-item">
-          <div class="item-header">ООО "Мясной мир", Москва | Июль 2012 - Декабрь 2017</div>
+        <details class="experience-item">
+          <summary class="item-header">ООО "Мясной мир", Москва | Июль 2012 - Декабрь 2017</summary>
           <div class="item-subtitle">Менеджер по ВЭД</div>
           <p class="content-text whitespace-pre">
 <b>Обязанности:</b> Закупка сырья, расчет себестоимости и таможенных платежей, контроль логистики. Создала в Excel единую систему отслеживания грузов.
 <b>Достижения:</b> Сертификат «Импортер 2014 года». Закупка сырья по ценам ниже рыночных.
 <b>Инструменты:</b> MS Office.</p>
-        </div>
+        </details>
 
       </div>
       
@@ -452,4 +486,4 @@
   </div>
 </section>
 </body>
-</html>
+</html>А
