@@ -258,7 +258,6 @@
       font-weight: 600;
     }
 
-    /* Стили для аккордеона */
     details.experience-item {
       border-bottom: 1px solid var(--color-bg-light);
       padding-bottom: 15px;
@@ -271,22 +270,40 @@
       list-style: none;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
+      gap: 10px;
     }
     details.experience-item summary::-webkit-details-marker {
       display: none;
+    }
+    details.experience-item summary .summary-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    details.experience-item summary .summary-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-dark);
+    }
+    details.experience-item summary .summary-subtitle {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      font-weight: 600;
     }
     details.experience-item summary::after {
       content: '▼';
       font-size: 0.8rem;
       color: var(--color-turquoise);
       transition: transform 0.2s;
+      margin-top: 5px;
+      flex-shrink: 0;
     }
     details.experience-item[open] summary::after {
       transform: rotate(180deg);
     }
-    details.experience-item .item-subtitle {
-      margin-top: 10px;
+    details.experience-item .details-content {
+      margin-top: 15px;
     }
 
     @media (max-width: 768px) {
@@ -384,24 +401,22 @@
         
         <div class="experience-item">
           <div class="item-header">Data Alchemist Ecosystem</div>
-          <div class="item-subtitle">Автор и архитектор | 2026</div>
+          <div class="item-subtitle">Системный аналитик / Аналитик данных | Ноябрь 2026 - наст. время</div>
           <p class="content-text whitespace-pre">
 <b>Задача:</b> Профессиональные артефакты (CV, GitHub, Confluence, Jira, Yandex DataLens, LinkedIn) существовали разрозненно, что затрудняло демонстрацию комплексных навыков аналитика и системного подхода. Нужно спроектировать и реализовать единую цифровую экосистему для презентации компетенций.
-<b>Решение:</b> Объединила CV-сайт, базу знаний (Confluence), таск-трекер (Jira), BI-дашборд (DataLens), профиль GitHub и страницу LinkedIn в единый взаимосвязанный пайплайн. Настроила сбор метрик (Яндекс.Метрика, Google Analytics) и описала кейсы.
-<b>Результат:</b> Создана единая точка входа для рекрутеров с прозрачной навигацией и сквозной аналитикой.
+<b>Решение:</b> Объединила все инструменты в единый пайплайн. Настроила сквозную аналитику (Яндекс.Метрика, Google Analytics), связала базу знаний с таск-трекером, спроектировала архитектуру данных. Переработала CV на базе шаблона (HTML/CSS), написала документацию и описала кейсы.
 <b>Стек:</b> HTML/CSS/JS, Confluence, Jira, Yandex DataLens, Yandex Metrika, Google Tag Manager.
-<b>Ссылка:</b> <a href="https://elenaphoenix.github.io/cv/" target="_blank">elenaphoenix.github.io/cv</a></p>
+<b>Ссылка:</b> <a href="https://elenaphoenix.github.io/cv/" target="_blank">My CV</a></p>
         </div>
 
         <div class="experience-item">
           <div class="item-header">HH Assistant: AI-Pipeline для поиска работы</div>
-          <div class="item-subtitle">Разработчик | Октябрь 2026 - Ноябрь 2026 (завершен)</div>
+          <div class="item-subtitle">Data Engineer / Python Developer | Октябрь 2026 - Ноябрь 2026 (завершен)</div>
           <p class="content-text whitespace-pre">
 <b>Задача:</b> Был ручной перебор тысяч нерелевантных вакансий и потеря времени на написание шаблонных сопроводительных писем. Нужно автоматизировать ETL-процесс поиска, скоринга вакансий и отправки откликов.
 <b>Решение:</b> Разработала ETL-пайплайн (Python), интеграция с API hh.ru, умный фильтр на основе расстояния Левенштейна, генерация писем через GigaChat API, дельта-синхронизация и хранение данных в PostgreSQL. Покрытие тестами - 107 шт.
-<b>Результат:</b> Полностью автоматизированный процесс от сбора вакансий до трекинга ответов HR.
 <b>Стек:</b> Python, PostgreSQL, GigaChat API, Docker, pytest, ThreadPoolExecutor.
-<b>Ссылка:</b> <a href="https://github.com/ElenaPhoenix/hh-assistant" target="_blank">GitHub Repository</a></p>
+<b>Ссылка:</b> <a href="https://github.com/ElenaPhoenix/hh-assistant" target="_blank">HH Assistant</a></p>
         </div>
       </div>
 
@@ -409,9 +424,14 @@
         <h3 class="content-title">Опыт работы</h3>
         
         <details class="experience-item">
-          <summary class="item-header">NDA (международная IT-компания, GameFi), Москва | Февраль 2023 - наст. время</summary>
-          <div class="item-subtitle">Аналитик данных</div>
-          <p class="content-text whitespace-pre">
+          <summary>
+            <div class="summary-content">
+              <span class="summary-title">NDA (международная IT-компания, GameFi), Москва | Февраль 2023 - наст. время</span>
+              <span class="summary-subtitle">Аналитик данных</span>
+            </div>
+          </summary>
+          <div class="details-content">
+            <p class="content-text whitespace-pre">
 Работала с 5 отделами (поддержка, модерация, продажи, комьюнити, автоматизация).
 
 <b>Обязанности</b>
@@ -462,12 +482,18 @@
 - Atlassian Jira,
 - Atlassian Confluence,
 - Agile.</p>
+          </div>
         </details>
         
         <details class="experience-item">
-          <summary class="item-header">Комус, Москва | Июнь 2025 - Август 2025 (3 месяца)</summary>
-          <div class="item-subtitle">Менеджер по управлению ресурсами</div>
-          <p class="content-text whitespace-pre">
+          <summary>
+            <div class="summary-content">
+              <span class="summary-title">Комус, Москва | Июнь 2025 - Август 2025 (3 месяца)</span>
+              <span class="summary-subtitle">Менеджер по управлению ресурсами</span>
+            </div>
+          </summary>
+          <div class="details-content">
+            <p class="content-text whitespace-pre">
 <b>Обязанности</b>
 - Подготавливала регулярную отчетность (план-факт) в Excel и SAP BO.
 - Проводила аудит Jira: проверяла корректность внесения трудозатрат, соответствие задач.
@@ -484,12 +510,18 @@
 - корпоративная административная система,
 - Atlassian Jira,
 - Atlassian Confluence.</p>
+          </div>
         </details>
 
         <details class="experience-item">
-          <summary class="item-header">ПОиК ПиО ГУ МВД РФ, Москва | Январь 2020 - Октябрь 2021</summary>
-          <div class="item-subtitle">Системный аналитик</div>
-          <p class="content-text whitespace-pre">
+          <summary>
+            <div class="summary-content">
+              <span class="summary-title">ПОиК ПиО ГУ МВД РФ, Москва | Январь 2020 - Октябрь 2021 (1 год 10 месяцев)</span>
+              <span class="summary-subtitle">Системный аналитик</span>
+            </div>
+          </summary>
+          <div class="details-content">
+            <p class="content-text whitespace-pre">
 <b>Обязанности</b>
 - Выполняла обязанности по осуществлению правопорядка.
 - Работала с первичной и внутренней документацией: предобработка, очистка и подготовка данных для дальнейшего анализа.
@@ -501,12 +533,18 @@
 <b>Инструменты</b>
 - MS Office,
 - внутренние базы данных.</p>
+          </div>
         </details>
 
         <details class="experience-item">
-          <summary class="item-header">Т-Банк, Москва | Май 2019 - Октябрь 2019</summary>
-          <div class="item-subtitle">Специалист чат-поддержки</div>
-          <p class="content-text whitespace-pre">
+          <summary>
+            <div class="summary-content">
+              <span class="summary-title">Т-Банк, Москва | Май 2019 - Октябрь 2019 (6 месяцев)</span>
+              <span class="summary-subtitle">Специалист чат-поддержки</span>
+            </div>
+          </summary>
+          <div class="details-content">
+            <p class="content-text whitespace-pre">
 <b>Обязанности</b>
 - Обеспечивала многоканальную поддержку (до 5 чатов) с соблюдением SLA.
 - Решала сложные запросы: блокировки, оспаривания, технические сбои.
@@ -519,12 +557,18 @@
 <b>Инструменты</b>
 - Jira,
 - банковские CRM-системы.</p>
+          </div>
         </details>
 
         <details class="experience-item">
-          <summary class="item-header">ХимПартнеры, Россия | Январь 2018 - Июль 2018</summary>
-          <div class="item-subtitle">Операционный менеджер</div>
-          <p class="content-text whitespace-pre">
+          <summary>
+            <div class="summary-content">
+              <span class="summary-title">ХимПартнеры, Москва | Январь 2018 - Июль 2018 (7 месяцев)</span>
+              <span class="summary-subtitle">Операционный менеджер</span>
+            </div>
+          </summary>
+          <div class="details-content">
+            <p class="content-text whitespace-pre">
 <b>Обязанности</b>
 - Координировала отгрузки товара и логистику (морские и сухопутные перевозки).
 - Подготавливала документы для таможенных органов.
@@ -536,12 +580,18 @@
 
 <b>Инструменты</b>
 - MS Office.</p>
+          </div>
         </details>
 
         <details class="experience-item">
-          <summary class="item-header">ООО "Мясной мир", Москва | Июль 2012 - Декабрь 2017</summary>
-          <div class="item-subtitle">Менеджер по ВЭД</div>
-          <p class="content-text whitespace-pre">
+          <summary>
+            <div class="summary-content">
+              <span class="summary-title">ООО "Мясной мир", Москва | Июль 2012 - Декабрь 2017 (5 лет 6 месяцев)</span>
+              <span class="summary-subtitle">Менеджер по ВЭД</span>
+            </div>
+          </summary>
+          <div class="details-content">
+            <p class="content-text whitespace-pre">
 Начинала с должности офис-менеджера, через 5 месяцев переведена на позицию менеджера по внешнеэкономической деятельности.
 
 <b>Обязанности</b>
@@ -561,6 +611,7 @@
 
 <b>Инструменты</b>
 - MS Office.</p>
+          </div>
         </details>
 
       </div>
