@@ -337,14 +337,14 @@
           <li>✉️ <a href="https://mail.yandex.ru/compose?to=latikayegane@yandex.ru" target="_blank" rel="noopener noreferrer">latikayegane@yandex.ru</a></li>
           <li>💼 <a href="https://www.linkedin.com/in/твой-профиль" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li>💻 <a href="https://github.com/ElenaPhoenix?tab=repositories" target="_blank">GitHub</a></li>
-          <li>🚀 Полная занятость, удаленно / гибрид</li>
+          <li>🚀 Полная занятость, офис / гибрид / удаленно </li>
         </ul>
       </div>
       
       <div class="sidebar-section">
         <h3 class="section-title">Портфолио</h3>
         <ul class="info-list portfolio-list">
-          <li>📚 <a href="https://listenshareanalytics.atlassian.net/wiki/spaces/bd/overview" target="_blank">Confluence (База знаний)</a></li>
+          <li>📚 <a href="https://listenshareanalytics.atlassian.net/wiki/spaces/bd/overview" target="_blank">Data Alchemist Hub (База знаний)</a></li>
         </ul>
       </div>
       
@@ -395,17 +395,23 @@
       <div class="content-section">
         <h3 class="content-title">Пет-проекты</h3>
         
-        <div class="experience-item">
-          <div class="item-header">Data Alchemist Ecosystem: единая цифровая экосистема для демонстрации навыков аналитика</div>
-          <div class="item-subtitle">Системный аналитик / Аналитик данных | Ноябрь 2026 - наст. время</div>
-          <p class="content-text whitespace-pre">
+        <details class="experience-item">
+          <summary>
+            <div class="summary-content">
+              <span class="summary-title">Data Alchemist Ecosystem: единая цифровая экосистема для демонстрации навыков аналитика</span>
+              <span class="summary-subtitle">Системный аналитик / Аналитик данных / BI-аналитик / Frontend-разработчик / Project Manager | Август 2026 - наст. время</span>
+            </div>
+          </summary>
+          <div class="details-content">
+            <p class="content-text whitespace-pre">
 <b>Задача</b> 
 Профессиональные артефакты (CV, GitHub, Confluence, Jira, Yandex DataLens, LinkedIn, Google Drive, Stepik) существовали разрозненно, что затрудняло демонстрацию комплексных навыков аналитика и системного подхода. Нужно спроектировать и реализовать единую цифровую экосистему для презентации компетенций.
             
 <b>Решение</b>
-Объединила все инструменты в единый пайплайн. Настроила сквозную аналитику (Яндекс.Метрика), связала базу знаний с таск-трекером, спроектировала архитектуру данных. Переработала CV на базе шаблона (HTML/CSS), написала документацию и описала кейсы.
+Переработала шаблон CV на HTML/CSS. Настроила сквозную аналитику (Яндекс.Метрика) с выводом данных на дашборд в Yandex DataLens. Заполнила в едином стиле профили на Github и LinkedIn. Спроектировала архитектуру экосистемы, описала бизнес-логику. Спланировала этапы разработки, вела бэклог в Jira. Создала базу знаний в Confluence, написала всю документацию и описала кейсы.  Объединила все инструменты в единый пайплайн.
             
 <b>Стек</b>
+- Figma,
 - HTML,
 - CSS,
 - Atlassian Confluence, 
@@ -413,18 +419,25 @@
 - Yandex DataLens, 
 - Yandex Metrika.
             
-<b>Ссылка</b> <a href="https://elenaphoenix.github.io/cv/" target="_blank">Интерактивное CV</a></p>
-        </div>
+<b>Ссылка</b> <a href="https://elenaphoenix.github.io/cv/" target="_blank">Интерактивное CV</a>
+            </p>
+          </div>
+        </details>
 
-        <div class="experience-item">
-          <div class="item-header">HH Assistant: AI-Pipeline для поиска работы</div>
-          <div class="item-subtitle">Data Engineer / Python Developer | Октябрь 2026 - Ноябрь 2026 (2 месяца)</div>
-          <p class="content-text whitespace-pre">
+        <details class="experience-item">
+          <summary>
+            <div class="summary-content">
+              <span class="summary-title">HH Assistant: AI-Pipeline для поиска работы</span>
+              <span class="summary-subtitle">Data Engineer / Python Developer / Системный аналитик / AI Engineer | Октябрь 2026 - Ноябрь 2026 (2 месяца)</span>
+            </div>
+          </summary>
+          <div class="details-content">
+            <p class="content-text whitespace-pre">
 <b>Задача</b>
 Был ручной перебор тысяч нерелевантных вакансий и потеря времени на написание шаблонных сопроводительных писем. Нужно автоматизировать ETL-процесс поиска, скоринга вакансий и отправки откликов.
             
 <b>Решение</b>
-Разработала ETL-пайплайн на Python. Настроила сбор данных через API hh.ru, внедрила умный фильтр (расстояние Левенштейна) для отсева нерелевантных вакансий, реализовала генерацию уникальных писем через GigaChat API и хранение истории откликов в PostgreSQL. Покрыла код 107 тестами.
+Разработала ETL-пайплайн на Python. Настроила сбор данных через API hh.ru, разработала логику "умного фильтра" (расстояние Левенштейна, приоритет слов-исключений) для отсева нерелевантных вакансий, реализовала генерацию уникальных писем через GigaChat API. Реализовала fallback на шаблон при малом остатке токенов. Настроила пост-обработку текста через pymorphy3 (морфология).Спроектировала нормализованную ER-модель базы данных (4 таблицы с внешними ключами). хранение истории откликов в PostgreSQL. Использовала ThreadPoolExecutor для многопоточности, contextmanager для работы с БД, модульную архитектуру (SRP). Покрыла код 107 тестами. Реализовала полную изоляцию файловой системы, чтобы тесты не ломали реальные данные. Организовала логирование, атомарную запись файлов, обработку сетевых сбоев и лимитов API.
             
 <b>Стек</b>
 - Python, 
@@ -434,8 +447,10 @@
 - pytest,
 - ThreadPoolExecutor.
             
-<b>Ссылка</b> <a href="https://github.com/ElenaPhoenix/hh-assistant" target="_blank">HH Assistant</a></p>
-        </div>
+<b>Ссылка</b> <a href="https://github.com/ElenaPhoenix/hh-assistant" target="_blank">HH Assistant</a>
+            </p>
+          </div>
+        </details>
       </div>
 
       <div class="content-section">
