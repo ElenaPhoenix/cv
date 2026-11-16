@@ -202,7 +202,7 @@
       transition: all 0.2s ease;
       cursor: pointer;
       width: 100%;
-      font-family: inherit;
+      font-family: var(--font-main);
     }
     .pdf-download-btn:hover {
       background-color: var(--color-turquoise);
@@ -240,7 +240,7 @@
 
     .main-content {
       flex: 1;
-      padding: 40px 40px 25px 40px;
+      padding: 25px 40px;
       background-color: var(--color-bg-white);
     }
 
@@ -369,21 +369,8 @@
       margin-top: 15px;
     }
 
-    /* Принудительное раскрытие аккордеона и скрытие кнопок при печати */
+    /* Скрытие лишнего при печати */
     @media print {
-      details {
-        display: block !important;
-      }
-      details > summary {
-        display: block !important;
-        pointer-events: none;
-      }
-      details > summary::after {
-        display: none !important;
-      }
-      details > .details-content {
-        display: block !important;
-      }
       .pdf-download-btn { display: none !important; }
       .lang-switcher { display: none !important; }
     }
@@ -448,7 +435,7 @@
       </div>
       
       <div class="sidebar-section">
-        <button onclick="window.print()" class="pdf-download-btn">
+        <button onclick="printResume()" class="pdf-download-btn">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
           Сохранить в PDF
         </button>
@@ -512,7 +499,7 @@
           <summary>
             <div class="summary-content">
               <span class="summary-title">Data Alchemist Ecosystem: единая цифровая экосистема для демонстрации навыков аналитика | Август 2026 - наст. время</span>
-              <span class="summary-subtitle">Системный аналитик / Аналитик данных / BI-аналитик / Frontend-разработчик / Руководитель продукта</span>
+              <span class="summary-subtitle">Системный аналитик / Аналитик данных / BI-аналитик / Frontend-разработчик / Руководитель проекта</span>
             </div>
           </summary>
           <div class="details-content">
@@ -788,5 +775,29 @@
     </main>
   </div>
 </section>
+
+<script>
+function printResume() {
+  const details = document.querySelectorAll('details');
+  const states = [];
+  
+  // 1. Запоминаем состояние и принудительно раскрываем все блоки
+  details.forEach((el, index) => {
+    states[index] = el.open;
+    el.open = true;
+  });
+
+  // 2. Вызываем печать
+  window.print();
+
+  // 3. Возвращаем все обратно после закрытия диалога печати
+  // Используем setTimeout, чтобы браузер успел отрисовать печать
+  setTimeout(() => {
+    details.forEach((el, index) => {
+      el.open = states[index];
+    });
+  }, 500); 
+}
+</script>
 </body>
 </html>
