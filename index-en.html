@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elena Malorosiyantseva - Data Analyst</title>
+  
+  <link rel="alternate" hreflang="ru" href="https://elenaphoenix.github.io/cv/index.html" />
+  <link rel="alternate" hreflang="en" href="https://elenaphoenix.github.io/cv/index-en.html" />
+  <link rel="alternate" hreflang="x-default" href="https://elenaphoenix.github.io/cv/index.html" />
+
+  <!-- Yandex.Metrika counter --> 
+  <script type="text/javascript">     
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window, document,'script','https://mc.webvisor.org/metrika/tag_ww.js?id=111546210', 'ym');      
+    ym(111546210, 'init', {ssr:true, webvisor:true, trackHash:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true}); 
+  </script> 
+  <noscript><div><img src="https://mc.yandex.ru/watch/111546210" style="position:absolute; left:-9999px;" alt="" /></div></noscript> 
+  <!-- /Yandex.Metrika counter -->   
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RLBGCTVWVK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RLBGCTVWVK');
+  </script>
+  <!-- /Google tag (gtag.js) -->
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="global.css">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  
+  <style>
+    #section-resume {
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .resume-container {
+      display: flex;
+      width: 100%;
+      max-width: 900px;
+      background-color: var(--color-bg-white);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .lang-switcher {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      display: flex;
+      gap: 8px;
+      z-index: 100;
+    }
+    .lang-link {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .lang-link.active {
+      color: var(--color-turquoise);
+      background: rgba(20, 184, 166, 0.1);
+    }
+    .lang-link:hover {
+      color: var(--color-turquoise);
+      text-decoration: none;
+    }
+    .flag-icon {
+      font-size: 0.9rem;
+      line-height: 1;
+    }
+
+    .sidebar {
+      flex: 0 0 35%;
+      background-color: var(--color-dark);
+      color: var(--color-bg-white);
+      padding: 40px 35px;
+      position: relative;
+    }
+
+    .profile-section {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .profile-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 15px auto;
+      display: block;
+      border: 3px solid var(--color-text-main);
+    }
+
+    .name {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .title {
+      font-size: 1rem;
+      color: var(--color-text-light);
+      font-weight: 400;
+      margin: 0;
+    }
+
+    .divider {
+      position: relative;
+      width: calc(100% + 80px);
+      height: 8px;
+      background: linear-gradient(90deg, var(--color-turquoise), var(--color-turquoise-dark));
+      border-radius: 3px;
+      margin: 30px 0;
+      z-index: 10;
+    }
+
+    .sidebar-section {
+      margin-bottom: 40px;
+    }
+
+    .sidebar-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0 0 15px 0;
+      letter-spacing: 0.02em;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .info-list li {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      margin-bottom: 12px;
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .info-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-list a {
+      color: var(--color-text-light);
+    }
+
+    .info-list a:hover {
+      color: var(--color-bg-white) !important;
+    }
+
+    .portfolio-list li {
+      color: rgba(20, 184, 166, 0.9);
+      font-weight: 600;
+    }
+
+    .pdf-download-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background-color: rgba(20, 184, 166, 0.15);
+      border: 1px solid var(--color-turquoise);
+      border-radius: 6px;
+      color: var(--color-turquoise);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .pdf-download-btn:hover {
+      background-color: var(--color-turquoise);
+      color: var(--color-dark) !important;
+      text-decoration: none;
+    }
+
+    .skill-group {
+      margin-bottom: 16px;
+    }
+
+    .skill-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--color-bg-white);
+    }
+
+    .skill-desc {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      line-height: 1.4;
+    }
+
+    .languages-text {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 40px 40px 25px 40px;
+      background-color: var(--color-bg-white);
+    }
+
+    .content-section {
+      margin-bottom: 40px;
+    }
+
+    .content-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .content-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--color-dark);
+      margin: 0 0 20px 0;
+      letter-spacing: -0.01em;
+    }
+
+    .sub-heading {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-dark);
+      margin: 25px 0 15px 0;
+    }
+
+    .content-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--color-text-main);
+      margin: 0;
+    }
+
+    .whitespace-pre {
+      white-space: pre-line;
+    }
+
+    .achievements-box {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .achievements-box::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 4px;
+      bottom: 4px;
+      width: 8px;
+      background: linear-gradient(180deg, var(--color-turquoise), var(--color-turquoise-dark));
+      border-radius: 3px;
+    }
+
+    .experience-item {
+      margin-bottom: 25px;
+    }
+
+    .experience-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .education-item {
+      margin-bottom: 15px;
+    }
+
+    .item-header {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-dark);
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+
+    .item-subtitle {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    details.experience-item {
+      border-bottom: 1px solid var(--color-bg-light);
+      padding-bottom: 15px;
+    }
+    details.experience-item:last-child {
+      border-bottom: none;
+    }
+    details.experience-item summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    details.experience-item summary::-webkit-details-marker {
+      display: none;
+    }
+    details.experience-item summary .summary-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    details.experience-item summary .summary-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-dark);
+    }
+    details.experience-item summary .summary-subtitle {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      font-weight: 600;
+    }
+    details.experience-item summary::after {
+      content: '▼';
+      font-size: 0.8rem;
+      color: var(--color-turquoise);
+      transition: transform 0.2s;
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+    details.experience-item[open] summary::after {
+      transform: rotate(180deg);
+    }
+    details.experience-item .details-content {
+      margin-top: 15px;
+    }
+
+    @media print {
+      .pdf-download-btn { display: none !important; }
+      .lang-switcher { display: none !important; }
+    }
+
+    @media (max-width: 768px) {
+      #section-resume { padding: 20px 10px; }
+      .resume-container { flex-direction: column; }
+      .lang-switcher { top: 10px; right: 10px; }
+      .sidebar { flex: none; width: 100%; padding: 30px 20px; }
+      .divider { width: 100%; }
+      .main-content { flex: none; width: 100%; padding: 30px 20px; }
+    }
+  </style>
+</head>
+<body>
+<section id="section-resume">
+  <div class="resume-container">
+    
+    <div class="lang-switcher">
+      <a href="index.html" class="lang-link" title="Русский" aria-label="Русская версия">
+        <span class="flag-icon">🇷🇺</span> RU
+      </a>
+      <a href="index-en.html" class="lang-link active" title="English" aria-label="English version">
+        <span class="flag-icon">🇬🇧</span> EN
+      </a>
+    </div>
+
+    <aside class="sidebar">
+      <div class="profile-section">
+        <img src="images/my_photo.jpg" alt="Elena Malorosiyantseva" class="profile-img">
+        <h1 class="name">Elena Malorosiyantseva</h1>
+        <h2 class="title">Data Analyst</h2>
+      </div>
+      
+      <div class="divider"></div>
+      
+      <div class="sidebar-section">
+        <h3 class="section-title">Contact</h3>
+        <ul class="info-list">
+          <li>📍 Moscow, Russia</li>
+          <li>📞 <a href="tel:+79163266925">+7(916) 326-69-25</a></li>
+          <li>💬 <a href="https://t.me/yeganebirtane" target="_blank" rel="noopener noreferrer">@yeganebirtane</a></li>
+          <li>✉️ <a href="https://mail.yandex.ru/compose?to=latikayegane@yandex.ru" target="_blank" rel="noopener noreferrer">latikayegane@yandex.ru</a></li>
+          <li>💼 <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li>💻 <a href="https://github.com/ElenaPhoenix" target="_blank">GitHub</a></li>
+          <li>🚀 Full-time, office / hybrid / remote</li>
+        </ul>
+      </div>
+      
+      <div class="sidebar-section">
+        <a href="resume-en.pdf" download class="pdf-download-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download CV (PDF)
+        </a>
+      </div>
+      
+      <div class="sidebar-section">
+        <h3 class="section-title">Portfolio</h3>
+        <ul class="info-list portfolio-list">
+          <li>📚 <a href="https://listenshareanalytics.atlassian.net/wiki/spaces/bd/overview" target="_blank">Data Alchemist Hub (Knowledge Base)</a></li>
+        </ul>
+      </div>
+      
+      <div class="sidebar-section">
+        <h3 class="section-title">Skills</h3>
+        <div class="skill-group">
+          <div class="skill-name">Data Engineering & Code</div>
+          <div class="skill-desc">Python (Pandas, NumPy), SQL (PostgreSQL, ClickHouse), API, Docker, Git, JavaScript</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-name">Analytics & BI</div>
+          <div class="skill-desc">Yandex DataLens, Power BI, Google Data Studio, Excel (Power Query/Pivot), Google Sheets</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-name">Automation & Management</div>
+          <div class="skill-desc">n8n, BPMN, Jira, Confluence, Agile</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-name">AI & NLP</div>
+          <div class="skill-desc">ChatGPT, DeepSeek, Perplexity, GigaChat API, Notebook LM</div>
+        </div>
+      </div>
+      
+      <div class="sidebar-section">
+        <h3 class="section-title">Languages</h3>
+        <p class="languages-text">Russian (Native), English (C1), Turkish (C1).</p>
+      </div>
+    </aside>
+    
+    <main class="main-content">
+      
+      <div class="content-section">
+        <h3 class="content-title">Profile</h3>
+        <p class="content-text">Data Analyst with experience in IT and FinTech. Background in operations management and foreign economic activity provides a systemic view of business processes. Specialized in automating routine reporting, building transparent ETL pipelines, and implementing AI tools to solve business problems.</p>
+      </div>
+      
+      <div class="content-section">
+        <h3 class="content-title">Key Achievements</h3>
+        <div class="achievements-box">
+          <p class="content-text whitespace-pre">📈 Automated key processes across 4 departments, increasing productivity by 20%
+⏳ Implemented real-time reporting, cutting analytics preparation time by 75% (4x faster)
+📚 Built a corporate knowledge base from scratch for 2 departments (50+ articles, procedures, checklists)
+🎯 Shifted the sales department from intuition-based to data-driven management
+👥 Designed training and onboarding processes: 6 employees trained in BI tools</p>
+        </div>
+      </div>
+      
+      <div class="content-section">
+        <h3 class="content-title">Pet Projects</h3>
+        
+        <details class="experience-item">
+          <summary>
+            <div class="summary-content">
+              <span class="summary-title">Data Alchemist Ecosystem: Unified Digital Ecosystem for Analyst Skills Demonstration | Aug 2026 - Present</span>
+              <span class="summary-subtitle">System Analyst / Data Analyst / BI Analyst / Frontend Developer / Project Manager</span>
+            </div>
+          </summary>
+          <div class="details-content">
+            <p class="content-text whitespace-pre">
+<b>Challenge</b> 
+Professional artifacts (CV, GitHub, Confluence, Jira, Yandex DataLens, LinkedIn, Google Drive, Stepik) were fragmented, making it difficult to demonstrate comprehensive analyst and systemic skills. Needed to design and implement a unified digital ecosystem to showcase competencies.
+            
+<b>Solution</b>
+Redesigned the CV template using HTML/CSS. Set up end-to-end analytics (Yandex Metrica) with data output to a Yandex DataLens dashboard. Populated GitHub and LinkedIn profiles in a consistent style. Designed the ecosystem architecture and described business logic. Planned development stages and managed the backlog in Jira. Built a knowledge base in Confluence, wrote all documentation and case studies. Integrated all tools into a single pipeline.
+            
+<b>Stack</b>
+- Figma,
+- HTML,
+- CSS,
+- Atlassian Confluence, 
+- Atlassian Jira, 
+- Yandex DataLens, 
+- Yandex Metrika.
+            
+<b>Link</b> <a href="https://elenaphoenix.github.io/cv/" target="_blank">Interactive CV</a>
+            </p>
+          </div>
+        </details>
+
+        <details class="experience-item">
+          <summary>
+            <div class="summary-content">
+              <span class="summary-title">HH Assistant: AI-Pipeline for Job Search | Oct 2026 - Nov 2026 (2 months)</span>
+              <span class="summary-subtitle">Data Engineer / Python Developer / System Analyst / AI Engineer</span>
+            </div>
+          </summary>
+          <div class="details-content">
+            <p class="content-text whitespace-pre">
+<b>Challenge</b>
+Manual screening of thousands of irrelevant job postings and time wasted on writing templated cover letters. Needed to automate the ETL process of searching, scoring vacancies, and submitting applications.
+            
+<b>Solution</b>
+Developed an ETL pipeline in Python. Configured data collection via hh.ru API. Implemented a smart filter logic (Levenshtein distance, exclusion word priority) to screen out irrelevant vacancies. Implemented unique letter generation via GigaChat API with a fallback to template when token balance is low. Configured text post-processing via pymorphy3 (morphology). Designed a normalized ER database model (4 tables with foreign keys). Stored application history in PostgreSQL. Used ThreadPoolExecutor for multithreading, contextmanager for DB operations, and modular architecture (SRP). Covered the code with 107 tests. Implemented full file system isolation to prevent tests from corrupting real data. Organized logging, atomic file writes, and handling of network failures and API limits.
+            
+<b>Stack</b>
+- Python, 
+- PostgreSQL, 
+- GigaChat API,
+- Docker,
+- pytest,
+- ThreadPoolExecutor.
+            
+<b>Link</b> <a href="https://github.com/ElenaPhoenix/hh-assistant" target="_blank">HH Assistant</a>
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <div class="content-section">
+        <h3 class="content-title">Work Experience</h3>
+        
+        <details class="experience-item">
+          <summary>
+            <div class="summary-content">
+              <span class="summary-title">NDA (International IT Company, GameFi), Moscow | Feb 2023 - Present</span>
+              <span class="summary-subtitle">Data Analyst</span>
+            </div>
+          </summary>
+          <div class="details-content">
+            <p class="content-text whitespace-pre">
+Worked with 5 departments (Support, Moderation, Sales, Community, Automation).
+
+<b>Responsibilities</b>
+Analytics and Reporting
+- Conducted ad-hoc research and cohort analysis to evaluate user behavior.
+- Built product funnels and segmented customers.
+- Identified trends, anomalies, and formulated hypotheses.
+- Monitored data quality and identified incidents.
+- Developed and maintained BI reports for business users.
+- Collected, verified, and formalized business requirements.
+
+Process Automation
+- Created an automated reporting system: from scattered spreadsheets to dashboards in Google Sheets and Google Data Studio.
+- Implemented a support ticket collection system: staff -> structured tables -> aggregation via scripts -> real-time dashboard.
+- Optimized ETL processes for data preparation.
+- Set up Jira and Confluence integration.
+
+Administration and Knowledge Management
+- Administered Jira (access, projects, sprint management, boards, filters, dashboards) and Confluence (access, permissions, structure, macros).
+- Built a knowledge base for 2 departments from scratch (Sales and Moderation; procedures, role profiles, checklists, etc.).
+- Conducted retrospectives and presented results to management.
+- Acted as coordinator and business assistant to the manager.
+
+<b>Achievements</b>
+- Automated manual reports in 4 departments (Support, Moderation, Sales, Community), increasing productivity by 20%.
+- Reduced analytics preparation time by 4x (Moderation department) through dashboards.
+- Reduced support ticket processing time from 8 hours to 1 hour per week.
+- Built a knowledge base for 2 departments (50+ articles, procedures, role profiles).
+- Trained 6 employees in BI tools.
+- Implemented sales reporting, enabling data-driven management.
+
+<b>Stack</b>
+- SQL,
+- Python (NumPy, Pandas),
+- JavaScript,
+- API,
+- Google Sheets,
+- Google Docs,
+- Google Data Studio,
+- Microsoft Excel,
+- Yandex DataLens,
+- Intercom,
+- AppsFlyer,
+- corporate admin system,
+- Miro,
+- n8n,
+- BPMN,
+- Atlassian Jira,
+- Atlassian Confluence,
+- Agile.</p>
+          </div>
+        </details>
+        
+        <details class="experience-item">
+          <summary>
+            <div class="summary-content">
+              <span class="summary-title">Komus (Russian office supplies company), Moscow | Jun 2025 - Aug 2025 (3 months)</span>
+              <span class="summary-subtitle">Resource Management Manager</span>
+            </div>
+          </summary>
+          <div class="details-content">
+            <p class="content-text whitespace-pre">
+<b>Responsibilities</b>
+- Prepared regular plan-vs-actual reports in Excel and SAP BO.
+- Conducted Jira audits: verified time tracking accuracy and task compliance.
+- Analyzed resource availability for projects.
+- Handled ad-hoc management requests: data collection and analysis.
+- Maintained internal reference guides and instructions in Confluence, keeping them up to date.
+
+<b>Achievements</b>
+Standardized several Confluence documents into a unified structure, correcting inaccuracies and discrepancies.
+
+<b>Stack</b>
+- Excel (Power Pivot, Power Query),
+- SAP BO,
+- corporate admin system,
+- Atlassian Jira,
+- Atlassian Confluence.</p>
+          </div>
+        </details>
+
+        <details class="experience-item">
+          <summary>
+            <div class="summary-content">
+              <span class="summary-title">Russian Ministry of Internal Affairs (PIK PiO GU MVD RF), Moscow | Jan 2020 - Oct 2021 (1 year 10 months)</span>
+              <span class="summary-subtitle">System Analyst</span>
+            </div>
+          </summary>
+          <div class="details-content">
+            <p class="content-text whitespace-pre">
+<b>Responsibilities</b>
+- Performed law enforcement duties.
+- Worked with primary and internal documentation: preprocessing, cleaning, and preparing data for further analysis.
+- Converted data from paper media to electronic format.
+
+<b>Achievements</b>
+Improved information retrieval speed from several days to several minutes.
+
+<b>Stack</b>
+- MS Office,
+- internal databases.</p>
+          </div>
+        </details>
+
+        <details class="experience-item">
+          <summary>
+            <div class="summary-content">
+              <span class="summary-title">T-Bank, Moscow | May 2019 - Oct 2019 (6 months)</span>
+              <span class="summary-subtitle">Chat Support Specialist</span>
+            </div>
+          </summary>
+          <div class="details-content">
+            <p class="content-text whitespace-pre">
+<b>Responsibilities</b>
+- Provided multi-channel support (up to 5 chats) in compliance with SLA.
+- Resolved complex requests: blocks, disputes, technical failures.
+- Identified customer needs and offered cross-products.
+- Prevented conflict escalation.
+
+<b>Achievements</b>
+Received positive feedback on the independent Banki.ru portal and was awarded a bonus.
+
+<b>Stack</b>
+- Jira,
+- banking CRM systems.</p>
+          </div>
+        </details>
+
+        <details class="experience-item">
+          <summary>
+            <div class="summary-content">
+              <span class="summary-title">ChemPartners, Moscow | Jan 2018 - Jul 2018 (7 months)</span>
+              <span class="summary-subtitle">Operations Manager</span>
+            </div>
+          </summary>
+          <div class="details-content">
+            <p class="content-text whitespace-pre">
+<b>Responsibilities</b>
+- Coordinated shipments and logistics (sea and land transportation).
+- Prepared documents for customs authorities.
+- Liaised with suppliers and logistics companies regarding document accuracy and delivery timelines.
+- Monitored delivery deadlines.
+
+<b>Achievements</b>
+All cargo delivered on time.
+
+<b>Stack</b>
+- MS Office.</p>
+          </div>
+        </details>
+
+        <details class="experience-item">
+          <summary>
+            <div class="summary-content">
+              <span class="summary-title">OOO «Myasnoi Mir», Moscow | Jul 2012 - Dec 2017 (5 years 6 months)</span>
+              <span class="summary-subtitle">Foreign Economic Activity Manager</span>
+            </div>
+          </summary>
+          <div class="details-content">
+            <p class="content-text whitespace-pre">
+Started as an Office Manager, promoted to Foreign Economic Activity Manager after 5 months.
+
+<b>Responsibilities</b>
+- Negotiated with foreign suppliers and logistics companies, concluded contracts.
+- Procured raw meat materials from foreign suppliers.
+- Calculated cost of goods and customs duties.
+- Participated in customs clearance of cargo.
+- Managed logistics (sea and land transportation).
+- Analyzed and planned warehouse inventory.
+- Maintained payment register.
+- Created a unified cargo tracking system in Excel: from procurement to warehouse receipt.
+
+<b>Achievements</b>
+Received the "Importer of the Year 2014" certificate for a product group.
+All raw material deliveries were made on time, without downtime.
+Procured raw materials at below-market prices.
+
+<b>Stack</b>
+- MS Office.</p>
+          </div>
+        </details>
+
+      </div>
+      
+      <div class="content-section">
+        <h3 class="content-title">Education</h3>
+        
+        <div class="education-item">
+          <div class="item-header">Saratov State University</div>
+          <div class="item-subtitle">Social and Cultural Services and Tourism | 2010</div>
+        </div>
+        
+        <h4 class="sub-heading">Additional Education</h4>
+        <div class="education-item">
+          <div class="item-header">Stepik</div>
+          <div class="item-subtitle">Analytics and Programming | 2026</div>
+        </div>
+        <div class="education-item">
+          <div class="item-header">Geekbrains</div>
+          <div class="item-subtitle">Analytics and Programming | 2025</div>
+        </div>
+        <div class="education-item">
+          <div class="item-header">MGIMO University, Moscow</div>
+          <div class="item-subtitle">English Language (Upper Intermediate) | 2017</div>
+        </div>
+      </div>
+      
+    </main>
+  </div>
+</section>
+</body>
+</html>
