@@ -484,9 +484,13 @@
         <h3 class="content-title">Key Achievements</h3>
         <div class="achievements-box">
           <p class="content-text whitespace-pre">📈 Automated key processes across 4 departments, increasing productivity by 20%
+
 ⏳ Implemented real-time reporting, cutting analytics preparation time by 75% (4x faster)
+
 📚 Built a corporate knowledge base from scratch for 2 departments (50+ articles, procedures, checklists)
+
 🎯 Shifted the sales department from intuition-based to data-driven management
+
 👥 Designed training and onboarding processes: 6 employees trained in BI tools</p>
         </div>
       </div>
@@ -505,10 +509,10 @@
             <p class="content-text whitespace-pre">
 <b>Challenge</b> 
 Professional artifacts (CV, GitHub, Confluence, Jira, Yandex DataLens, LinkedIn, Google Drive, Stepik) were fragmented, making it difficult to demonstrate comprehensive analyst and systemic skills. Needed to design and implement a unified digital ecosystem to showcase competencies.
-            
+
 <b>Solution</b>
 Redesigned the CV template. Set up end-to-end analytics (Yandex Metrica) with data output to a Yandex DataLens dashboard. Populated GitHub and LinkedIn profiles in a consistent style. Designed the ecosystem architecture and described business logic. Planned development stages and managed the backlog in Jira. Built a knowledge base in Confluence, wrote all documentation and case studies. Integrated all tools into a single pipeline.
-            
+
 <b>Stack</b>
 - Figma,
 - HTML,
@@ -518,7 +522,7 @@ Redesigned the CV template. Set up end-to-end analytics (Yandex Metrica) with da
 - Atlassian Jira, 
 - Yandex DataLens, 
 - Yandex Metrika.
-            
+
 <b>Link</b> <a href="https://elenaphoenix.github.io/cv/" target="_blank">Interactive CV</a>
             </p>
           </div>
@@ -535,10 +539,10 @@ Redesigned the CV template. Set up end-to-end analytics (Yandex Metrica) with da
             <p class="content-text whitespace-pre">
 <b>Challenge</b>
 Manual screening of thousands of irrelevant job postings and time wasted on writing templated cover letters. Needed to automate the ETL process of searching, scoring vacancies, and submitting applications.
-            
+
 <b>Solution</b>
 Developed an ETL pipeline in Python. Configured data collection via hh.ru API. Implemented a smart filter logic (Levenshtein distance, exclusion word priority) to screen out irrelevant vacancies. Implemented unique letter generation via GigaChat API with a fallback to template when token balance is low. Configured text post-processing via pymorphy3 (morphology). Designed a normalized ER database model (4 tables with foreign keys). Stored application history in PostgreSQL. Used ThreadPoolExecutor for multithreading, contextmanager for DB operations, and modular architecture (SRP). Covered the code with 107 tests. Implemented full file system isolation to prevent tests from corrupting real data. Organized logging, atomic file writes, and handling of network failures and API limits.
-            
+
 <b>Stack</b>
 - Python, 
 - PostgreSQL, 
@@ -546,7 +550,7 @@ Developed an ETL pipeline in Python. Configured data collection via hh.ru API. I
 - Docker,
 - pytest,
 - ThreadPoolExecutor.
-            
+
 <b>Link</b> <a href="https://github.com/ElenaPhoenix/hh-assistant" target="_blank">HH Assistant</a>
             </p>
           </div>
@@ -781,16 +785,13 @@ function printResume() {
   const details = document.querySelectorAll('details');
   const states = [];
   
-  // 1. Запоминаем состояние и принудительно раскрываем все блоки
   details.forEach((el, index) => {
     states[index] = el.open;
     el.open = true;
   });
 
-  // 2. Вызываем печать
   window.print();
 
-  // 3. Возвращаем все обратно после закрытия диалога печати
   setTimeout(() => {
     details.forEach((el, index) => {
       el.open = states[index];
