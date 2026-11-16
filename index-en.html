@@ -85,9 +85,11 @@
       color: var(--color-turquoise);
       text-decoration: none;
     }
-    .flag-icon {
-      font-size: 0.9rem;
-      line-height: 1;
+    .flag-svg {
+      flex-shrink: 0;
+      display: inline-block;
+      vertical-align: middle;
+      border-radius: 2px;
     }
 
     .sidebar {
@@ -198,6 +200,9 @@
       font-weight: 600;
       text-decoration: none;
       transition: all 0.2s ease;
+      cursor: pointer;
+      width: 100%;
+      font-family: inherit;
     }
     .pdf-download-btn:hover {
       background-color: var(--color-turquoise);
@@ -385,10 +390,24 @@
     
     <div class="lang-switcher">
       <a href="index.html" class="lang-link" title="Русский" aria-label="Русская версия">
-        <span class="flag-icon">🇷🇺</span> RU
+        <svg class="flag-svg" viewBox="0 0 640 480" width="16" height="12">
+          <rect width="640" height="160" fill="#fff"/>
+          <rect y="160" width="640" height="160" fill="#0039a6"/>
+          <rect y="320" width="640" height="160" fill="#d52b1e"/>
+        </svg>
+        RU
       </a>
       <a href="index-en.html" class="lang-link active" title="English" aria-label="English version">
-        <span class="flag-icon">🇬🇧</span> EN
+        <svg class="flag-svg" viewBox="0 0 640 480" width="16" height="12">
+          <rect width="640" height="480" fill="#012169"/>
+          <path d="M0,0 L640,480 M640,0 L0,480" stroke="#fff" stroke-width="80"/>
+          <path d="M0,0 L640,480 M640,0 L0,480" stroke="#C8102E" stroke-width="40"/>
+          <rect x="280" width="80" height="480" fill="#fff"/>
+          <rect y="200" width="640" height="80" fill="#fff"/>
+          <rect x="300" width="40" height="480" fill="#C8102E"/>
+          <rect y="220" width="640" height="40" fill="#C8102E"/>
+        </svg>
+        EN
       </a>
     </div>
 
@@ -408,17 +427,17 @@
           <li>📞 <a href="tel:+79163266925">+7(916) 326-69-25</a></li>
           <li>💬 <a href="https://t.me/yeganebirtane" target="_blank" rel="noopener noreferrer">@yeganebirtane</a></li>
           <li>✉️ <a href="https://mail.yandex.ru/compose?to=latikayegane@yandex.ru" target="_blank" rel="noopener noreferrer">latikayegane@yandex.ru</a></li>
-          <li>💼 <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li>💼 <a href="https://www.linkedin.com/in/listenshareanalytics/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li>💻 <a href="https://github.com/ElenaPhoenix" target="_blank">GitHub</a></li>
           <li>🚀 Full-time, office / hybrid / remote</li>
         </ul>
       </div>
       
       <div class="sidebar-section">
-        <a href="resume-en.pdf" download class="pdf-download-btn">
+        <button onclick="window.print()" class="pdf-download-btn">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-          Download CV (PDF)
-        </a>
+          Save as PDF
+        </button>
       </div>
       
       <div class="sidebar-section">
