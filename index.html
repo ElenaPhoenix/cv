@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Елена Малоросиянцева - Аналитик</title>
+  
+  <link rel="alternate" hreflang="ru" href="https://elenaphoenix.github.io/cv/index.html" />
+  <link rel="alternate" hreflang="en" href="https://elenaphoenix.github.io/cv/index-en.html" />
+  <link rel="alternate" hreflang="x-default" href="https://elenaphoenix.github.io/cv/index.html" />
 
   <!-- Yandex.Metrika counter --> 
   <script type="text/javascript">     
@@ -50,6 +54,40 @@
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
       border-radius: 8px;
       overflow: hidden;
+      position: relative;
+    }
+
+    .lang-switcher {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      display: flex;
+      gap: 8px;
+      z-index: 100;
+    }
+    .lang-link {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .lang-link.active {
+      color: var(--color-turquoise);
+      background: rgba(20, 184, 166, 0.1);
+    }
+    .lang-link:hover {
+      color: var(--color-turquoise);
+      text-decoration: none;
+    }
+    .flag-icon {
+      font-size: 0.9rem;
+      line-height: 1;
     }
 
     .sidebar {
@@ -147,6 +185,26 @@
       font-weight: 600;
     }
 
+    .pdf-download-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background-color: rgba(20, 184, 166, 0.15);
+      border: 1px solid var(--color-turquoise);
+      border-radius: 6px;
+      color: var(--color-turquoise);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .pdf-download-btn:hover {
+      background-color: var(--color-turquoise);
+      color: var(--color-dark) !important;
+      text-decoration: none;
+    }
+
     .skill-group {
       margin-bottom: 16px;
     }
@@ -177,7 +235,7 @@
 
     .main-content {
       flex: 1;
-      padding: 25px 40px;
+      padding: 40px 40px 25px 40px;
       background-color: var(--color-bg-white);
     }
 
@@ -306,9 +364,15 @@
       margin-top: 15px;
     }
 
+    @media print {
+      .pdf-download-btn { display: none !important; }
+      .lang-switcher { display: none !important; }
+    }
+
     @media (max-width: 768px) {
       #section-resume { padding: 20px 10px; }
       .resume-container { flex-direction: column; }
+      .lang-switcher { top: 10px; right: 10px; }
       .sidebar { flex: none; width: 100%; padding: 30px 20px; }
       .divider { width: 100%; }
       .main-content { flex: none; width: 100%; padding: 30px 20px; }
@@ -319,6 +383,15 @@
 <section id="section-resume">
   <div class="resume-container">
     
+    <div class="lang-switcher">
+      <a href="index.html" class="lang-link active" title="Русский" aria-label="Русская версия">
+        <span class="flag-icon">🇷🇺</span> RU
+      </a>
+      <a href="index-en.html" class="lang-link" title="English" aria-label="English version">
+        <span class="flag-icon">🇬🇧</span> EN
+      </a>
+    </div>
+
     <aside class="sidebar">
       <div class="profile-section">
         <img src="images/my_photo.jpg" alt="Елена Малоросиянцева" class="profile-img">
@@ -339,6 +412,13 @@
           <li>💻 <a href="https://github.com/ElenaPhoenix" target="_blank">GitHub</a></li>
           <li>🚀 Полная занятость, офис / гибрид / удаленно </li>
         </ul>
+      </div>
+      
+      <div class="sidebar-section">
+        <a href="resume-ru.pdf" download class="pdf-download-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Скачать резюме (PDF)
+        </a>
       </div>
       
       <div class="sidebar-section">
@@ -408,7 +488,7 @@
 Профессиональные артефакты (CV, GitHub, Confluence, Jira, Yandex DataLens, LinkedIn, Google Drive, Stepik) существовали разрозненно, что затрудняло демонстрацию комплексных навыков аналитика и системного подхода. Нужно спроектировать и реализовать единую цифровую экосистему для презентации компетенций.
             
 <b>Решение</b>
-Переработала шаблон CV на HTML/CSS. Настроила сквозную аналитику (Яндекс.Метрика) с выводом данных на дашборд в Yandex DataLens. Заполнила в едином стиле профили на Github и LinkedIn. Спроектировала архитектуру экосистемы, описала бизнес-логику. Спланировала этапы разработки, вела бэклог в Jira. Создала базу знаний в Confluence, написала всю документацию и описала кейсы.  Объединила все инструменты в единый пайплайн.
+Переработала шаблон CV на HTML/CSS. Настроила сквозную аналитику (Яндекс.Метрика) с выводом данных на дашборд в Yandex DataLens. Заполнила в едином стиле профили на Github и LinkedIn. Спроектировала архитектуру экосистемы, описала бизнес-логику. Спланировала этапы разработки, вела бэклог в Jira. Создала базу знаний в Confluence, написала всю документацию и описала кейсы. Объединила все инструменты в единый пайплайн.
             
 <b>Стек</b>
 - Figma,
@@ -437,7 +517,7 @@
 Был ручной перебор тысяч нерелевантных вакансий и потеря времени на написание шаблонных сопроводительных писем. Нужно автоматизировать ETL-процесс поиска, скоринга вакансий и отправки откликов.
             
 <b>Решение</b>
-Разработала ETL-пайплайн на Python. Настроила сбор данных через API hh.ru, разработала логику "умного фильтра" (расстояние Левенштейна, приоритет слов-исключений) для отсева нерелевантных вакансий, реализовала генерацию уникальных писем через GigaChat API. Реализовала fallback на шаблон при малом остатке токенов. Настроила пост-обработку текста через pymorphy3 (морфология).Спроектировала нормализованную ER-модель базы данных (4 таблицы с внешними ключами). хранение истории откликов в PostgreSQL. Использовала ThreadPoolExecutor для многопоточности, contextmanager для работы с БД, модульную архитектуру (SRP). Покрыла код 107 тестами. Реализовала полную изоляцию файловой системы, чтобы тесты не ломали реальные данные. Организовала логирование, атомарную запись файлов, обработку сетевых сбоев и лимитов API.
+Разработала ETL-пайплайн на Python. Настроила сбор данных через API hh.ru, разработала логику "умного фильтра" (расстояние Левенштейна, приоритет слов-исключений) для отсева нерелевантных вакансий, реализовала генерацию уникальных писем через GigaChat API. Реализовала fallback на шаблон при малом остатке токенов. Настроила пост-обработку текста через pymorphy3 (морфология). Спроектировала нормализованную ER-модель базы данных (4 таблицы с внешними ключами). хранение истории откликов в PostgreSQL. Использовала ThreadPoolExecutor для многопоточности, contextmanager для работы с БД, модульную архитектуру (SRP). Покрыла код 107 тестами. Реализовала полную изоляцию файловой системы, чтобы тесты не ломали реальные данные. Организовала логирование, атомарную запись файлов, обработку сетевых сбоев и лимитов API.
             
 <b>Стек</b>
 - Python, 
@@ -596,7 +676,7 @@
         <details class="experience-item">
           <summary>
             <div class="summary-content">
-              <span class="summary-title">ХимПартнеры, Москва | Январь 2018 - Июль 2018 (7 месяцев)</span>
+              <span class="summary-title">ХимПартнеры (ChemPartners), Москва | Январь 2018 - Июль 2018 (7 месяцев)</span>
               <span class="summary-subtitle">Операционный менеджер</span>
             </div>
           </summary>
