@@ -369,7 +369,21 @@
       margin-top: 15px;
     }
 
+    /* Принудительное раскрытие аккордеона и скрытие кнопок при печати */
     @media print {
+      details {
+        display: block !important;
+      }
+      details > summary {
+        display: block !important;
+        pointer-events: none;
+      }
+      details > summary::after {
+        display: none !important;
+      }
+      details > .details-content {
+        display: block !important;
+      }
       .pdf-download-btn { display: none !important; }
       .lang-switcher { display: none !important; }
     }
@@ -424,7 +438,7 @@
         <h3 class="section-title">Контакты</h3>
         <ul class="info-list">
           <li>📍 Москва, Россия</li>
-          <li>📞 <a href="tel:+79163266925">+7(916) 326-69-25</a></li>
+          <li>📞 <a href="tel:+79163266925">+7 (916) 326-69-25</a></li>
           <li>💬 <a href="https://t.me/yeganebirtane" target="_blank" rel="noopener noreferrer">@yeganebirtane</a></li>
           <li>✉️ <a href="https://mail.yandex.ru/compose?to=latikayegane@yandex.ru" target="_blank" rel="noopener noreferrer">latikayegane@yandex.ru</a></li>
           <li>💼 <a href="https://www.linkedin.com/in/listenshareanalytics/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
@@ -450,19 +464,19 @@
       <div class="sidebar-section">
         <h3 class="section-title">Навыки</h3>
         <div class="skill-group">
-          <div class="skill-name">Data Engineering & Code</div>
+          <div class="skill-name">Инженерия данных и код</div>
           <div class="skill-desc">Python (Pandas, NumPy), SQL (PostgreSQL, ClickHouse), API, Docker, Git, JavaScript</div>
         </div>
         <div class="skill-group">
-          <div class="skill-name">Analytics & BI</div>
+          <div class="skill-name">Аналитика и BI</div>
           <div class="skill-desc">Yandex DataLens, Power BI, Google Data Studio, Excel (Power Query/Pivot), Google Sheets</div>
         </div>
         <div class="skill-group">
-          <div class="skill-name">Automation & Management</div>
+          <div class="skill-name">Автоматизация и управление</div>
           <div class="skill-desc">n8n, BPMN, Jira, Confluence, Agile</div>
         </div>
         <div class="skill-group">
-          <div class="skill-name">AI & NLP</div>
+          <div class="skill-name">AI и NLP</div>
           <div class="skill-desc">ChatGPT, DeepSeek, Perplexity, GigaChat API, Notebook LM</div>
         </div>
       </div>
@@ -695,7 +709,7 @@
         <details class="experience-item">
           <summary>
             <div class="summary-content">
-              <span class="summary-title">ХимПартнеры (ChemPartners), Москва | Январь 2018 - Июль 2018 (7 месяцев)</span>
+              <span class="summary-title">ХимПартнеры, Москва | Январь 2018 - Июль 2018 (7 месяцев)</span>
               <span class="summary-subtitle">Операционный менеджер</span>
             </div>
           </summary>
