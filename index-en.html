@@ -369,7 +369,21 @@
       margin-top: 15px;
     }
 
+    /* Принудительное раскрытие аккордеона и скрытие кнопок при печати */
     @media print {
+      details {
+        display: block !important;
+      }
+      details > summary {
+        display: block !important;
+        pointer-events: none;
+      }
+      details > summary::after {
+        display: none !important;
+      }
+      details > .details-content {
+        display: block !important;
+      }
       .pdf-download-btn { display: none !important; }
       .lang-switcher { display: none !important; }
     }
@@ -424,7 +438,7 @@
         <h3 class="section-title">Contact</h3>
         <ul class="info-list">
           <li>📍 Moscow, Russia</li>
-          <li>📞 <a href="tel:+79163266925">+7(916) 326-69-25</a></li>
+          <li>📞 <a href="tel:+79163266925">+7 (916) 326-69-25</a></li>
           <li>💬 <a href="https://t.me/yeganebirtane" target="_blank" rel="noopener noreferrer">@yeganebirtane</a></li>
           <li>✉️ <a href="https://mail.yandex.ru/compose?to=latikayegane@yandex.ru" target="_blank" rel="noopener noreferrer">latikayegane@yandex.ru</a></li>
           <li>💼 <a href="https://www.linkedin.com/in/listenshareanalytics/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
@@ -527,7 +541,7 @@ Redesigned the CV template using HTML/CSS. Set up end-to-end analytics (Yandex M
           <summary>
             <div class="summary-content">
               <span class="summary-title">HH Assistant: AI-Pipeline for Job Search | Oct 2026 - Nov 2026 (2 months)</span>
-              <span class="summary-subtitle">Data Engineer / Python Developer / System Analyst / AI Engineer</span>
+              <span class="summary-subtitle">Data Engineer / AI Engineer / System Analyst / Python Developer</span>
             </div>
           </summary>
           <div class="details-content">
@@ -648,7 +662,7 @@ Standardized several Confluence documents into a unified structure, correcting i
         <details class="experience-item">
           <summary>
             <div class="summary-content">
-              <span class="summary-title">Russian Ministry of Internal Affairs (PIK PiO GU MVD RF), Moscow | Jan 2020 - Oct 2021 (1 year 10 months)</span>
+              <span class="summary-title">Russian Ministry of Internal Affairs, Moscow | Jan 2020 - Oct 2021 (1 year 10 months)</span>
               <span class="summary-subtitle">System Analyst</span>
             </div>
           </summary>
@@ -718,7 +732,7 @@ All cargo delivered on time.
         <details class="experience-item">
           <summary>
             <div class="summary-content">
-              <span class="summary-title">OOO «Myasnoi Mir», Moscow | Jul 2012 - Dec 2017 (5 years 6 months)</span>
+              <span class="summary-title">LLC «Miasnoy Mir», Moscow | Jul 2012 - Dec 2017 (5 years 6 months)</span>
               <span class="summary-subtitle">Foreign Economic Activity Manager</span>
             </div>
           </summary>
