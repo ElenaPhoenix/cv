@@ -202,7 +202,7 @@
       transition: all 0.2s ease;
       cursor: pointer;
       width: 100%;
-      font-family: inherit;
+      font-family: var(--font-main);
     }
     .pdf-download-btn:hover {
       background-color: var(--color-turquoise);
@@ -240,7 +240,7 @@
 
     .main-content {
       flex: 1;
-      padding: 40px 40px 25px 40px;
+      padding: 25px 40px;
       background-color: var(--color-bg-white);
     }
 
@@ -369,21 +369,8 @@
       margin-top: 15px;
     }
 
-    /* Принудительное раскрытие аккордеона и скрытие кнопок при печати */
+    /* Скрытие лишнего при печати */
     @media print {
-      details {
-        display: block !important;
-      }
-      details > summary {
-        display: block !important;
-        pointer-events: none;
-      }
-      details > summary::after {
-        display: none !important;
-      }
-      details > .details-content {
-        display: block !important;
-      }
       .pdf-download-btn { display: none !important; }
       .lang-switcher { display: none !important; }
     }
@@ -448,7 +435,7 @@
       </div>
       
       <div class="sidebar-section">
-        <button onclick="window.print()" class="pdf-download-btn">
+        <button onclick="printResume()" class="pdf-download-btn">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
           Save as PDF
         </button>
@@ -634,7 +621,7 @@ Administration and Knowledge Management
         <details class="experience-item">
           <summary>
             <div class="summary-content">
-              <span class="summary-title">Komus (Russian office supplies company), Moscow | Jun 2025 - Aug 2025 (3 months)</span>
+              <span class="summary-title">Komus, Moscow | Jun 2025 - Aug 2025 (3 months)</span>
               <span class="summary-subtitle">Resource Management Manager</span>
             </div>
           </summary>
@@ -732,7 +719,7 @@ All cargo delivered on time.
         <details class="experience-item">
           <summary>
             <div class="summary-content">
-              <span class="summary-title">LLC «Miasnoy Mir», Moscow | Jul 2012 - Dec 2017 (5 years 6 months)</span>
+              <span class="summary-title">LTD «Miasnoy Mir», Moscow | Jul 2012 - Dec 2017 (5 years 6 months)</span>
               <span class="summary-subtitle">Foreign Economic Activity Manager</span>
             </div>
           </summary>
@@ -788,5 +775,28 @@ Procured raw materials at below-market prices.
     </main>
   </div>
 </section>
+
+<script>
+function printResume() {
+  const details = document.querySelectorAll('details');
+  const states = [];
+  
+  // 1. Запоминаем состояние и принудительно раскрываем все блоки
+  details.forEach((el, index) => {
+    states[index] = el.open;
+    el.open = true;
+  });
+
+  // 2. Вызываем печать
+  window.print();
+
+  // 3. Возвращаем все обратно после закрытия диалога печати
+  setTimeout(() => {
+    details.forEach((el, index) => {
+      el.open = states[index];
+    });
+  }, 500); 
+}
+</script>
 </body>
 </html>
