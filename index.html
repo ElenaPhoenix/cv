@@ -117,14 +117,14 @@
       flex: 0 0 35%;
       background-color: var(--color-dark);
       color: var(--color-bg-white);
-      padding: 40px 30px;
+      padding: 20px 30px 30px 30px; /* Уменьшен верхний отступ */
       display: flex;
       flex-direction: column;
     }
 
     .profile-section {
       text-align: center;
-      margin-bottom: 10px; /* Минимальный отступ для линии */
+      margin-bottom: 10px;
     }
 
     .profile-img {
@@ -153,19 +153,19 @@
       line-height: 1.4;
     }
 
-    /* ГОРИЗОНТАЛЬНАЯ ЛИНИЯ (Подчеркивание под должностью) */
+    /* ГОРИЗОНТАЛЬНАЯ ЛИНИЯ (Вернули изначальную длину) */
     .divider {
       position: relative;
-      width: calc(100% + 30px); /* Выходит вправо в отступ */
+      width: calc(100% + 80px); /* Изначальная длина */
       height: 6px;
       background: linear-gradient(90deg, var(--color-turquoise), var(--color-turquoise-dark));
       border-radius: 3px;
-      margin: 0 0 25px 0; /* 0 сверху, 25 снизу */
+      margin: 0 0 24px 0; /* Единый отступ */
       z-index: 10;
     }
 
     .sidebar-section {
-      margin-bottom: 25px;
+      margin-bottom: 24px; /* Единый отступ */
     }
     .sidebar-section:last-child { margin-bottom: 0; }
 
@@ -265,7 +265,7 @@
     /* ПРАВАЯ КОЛОНКА */
     .main-content {
       flex: 1;
-      padding: 30px 40px;
+      padding: 20px 40px 30px 40px; /* Уменьшен верхний отступ для выравнивания */
       background-color: var(--color-bg-white);
       position: relative;
       display: flex;
@@ -273,7 +273,7 @@
     }
 
     .content-section {
-      margin-bottom: 30px;
+      margin-bottom: 24px; /* Единый отступ */
       position: relative;
       z-index: 2;
     }
@@ -305,14 +305,14 @@
       content: '';
       position: absolute;
       left: 0;
-      top: -27px; /* Поднимаем до горизонтальной линии */
+      top: -24px; /* Идеальная стыковка с горизонтальной линией */
       bottom: 0;
       width: 6px;
       background: linear-gradient(180deg, var(--color-turquoise), var(--color-turquoise-dark));
       border-radius: 3px;
       z-index: 5;
     }
-    .about-section { margin-bottom: 40px; }
+    .about-section { margin-bottom: 24px; }
 
     /* УНИВЕРСАЛЬНЫЙ БЛОК С ДАТАМИ (Grid) */
     .item-header {
@@ -396,9 +396,11 @@
       padding-left: 12px;
       border-left: 2px solid var(--color-bg-light);
     }
+    
+    /* СТЕК ТЕКСТ (Как основной текст) */
     .stack-text {
-      font-size: 0.85rem;
-      color: var(--color-text-muted);
+      font-size: 0.95rem; /* Основной размер */
+      color: var(--color-text-main); /* Основной цвет */
       margin-top: 8px;
       display: block;
     }
@@ -420,8 +422,8 @@
     @media (max-width: 768px) {
       #section-resume { padding: 10px; }
       .resume-container { flex-direction: column; }
-      .divider { width: 100%; margin-bottom: 20px; }
-      .sidebar { padding: 30px 20px; }
+      .divider { width: 100%; margin-bottom: 24px; }
+      .sidebar { padding: 20px 20px 30px 20px; }
       .main-content { padding: 20px; }
       .achievements-box::before { top: 0; }
       .lang-switcher { top: 10px; right: 10px; }
@@ -454,8 +456,8 @@
         <h3 class="section-title">Локация и занятость</h3>
         <ul class="info-list">
           <li><span class="contact-icon">📍</span> Москва, Россия</li>
-          <li><span class="contact-icon">💼</span> Полная занятость</li>
-          <li><span class="contact-icon">🚀</span> Офис / гибрид / удаленно</li>
+          <li><span class="contact-icon">⏳</span> Полная занятость</li>
+          <li><span class="contact-icon">🏢</span> Офис / гибрид / удаленно</li>
         </ul>
       </div>
 
