@@ -133,7 +133,7 @@
 
     .divider {
       position: relative;
-      width: calc(100% + 80px);
+      width: calc(100% + 200px);
       height: 8px;
       background: linear-gradient(90deg, var(--color-turquoise), var(--color-turquoise-dark));
       border-radius: 3px;
@@ -287,8 +287,8 @@
     .achievements-box::before {
       content: '';
       position: absolute;
-      left: -38px;
-      top: -55px;
+      left: 0;
+      top: -58px;
       bottom: 4px;
       width: 8px;
       background: linear-gradient(180deg, var(--color-turquoise), var(--color-turquoise-dark));
@@ -371,6 +371,7 @@
       margin-top: 15px;
     }
 
+    /* Скрытие лишнего при печати */
     @media print {
       .pdf-download-btn { display: none !important; }
       .lang-switcher { display: none !important; }
@@ -382,7 +383,6 @@
       .lang-switcher { top: 10px; right: 10px; }
       .sidebar { flex: none; width: 100%; padding: 30px 20px; }
       .divider { width: 100%; }
-      .achievements-box::before { left: 0; top: 4px; }
       .main-content { flex: none; width: 100%; padding: 30px 20px; }
     }
   </style>
