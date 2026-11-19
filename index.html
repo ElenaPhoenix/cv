@@ -137,7 +137,7 @@
       height: 8px;
       background: linear-gradient(90deg, var(--color-turquoise), var(--color-turquoise-dark));
       border-radius: 3px;
-      margin: 30px 0;
+      margin: 10px 0 30px 0; /* Сдвинули вверх */
       z-index: 10;
     }
 
@@ -288,7 +288,7 @@
       content: '';
       position: absolute;
       left: 0;
-      top: 4px;
+      top: -55px; /* Поднимаем линию до горизонтальной */
       bottom: 4px;
       width: 8px;
       background: linear-gradient(180deg, var(--color-turquoise), var(--color-turquoise-dark));
@@ -371,6 +371,11 @@
       margin-top: 15px;
     }
 
+    /* Сдвигаем блок "Ключевые достижения" вниз */
+    .about-section {
+      margin-bottom: 70px;
+    }
+
     @media print {
       .pdf-download-btn { display: none !important; }
       .lang-switcher { display: none !important; }
@@ -381,7 +386,9 @@
       .resume-container { flex-direction: column; }
       .lang-switcher { top: 10px; right: 10px; }
       .sidebar { flex: none; width: 100%; padding: 30px 20px; }
-      .divider { width: 100%; }
+      .divider { width: 100%; margin: 30px 0; }
+      .about-section { margin-bottom: 40px; }
+      .achievements-box::before { left: 0; top: 4px; }
       .main-content { flex: none; width: 100%; padding: 30px 20px; }
     }
   </style>
@@ -419,16 +426,19 @@
         <h1 class="name">Елена Малоросиянцева</h1>
         <h2 class="title">Аналитик / Инженер данных /
           Python-разработчик</h2>
-      </div>  
+      </div>
+      
       <div class="divider"></div>
       
       <div class="sidebar-section">
+        <h3 class="section-title">Локация и занятость</h3>
         <ul class="info-list">
-          <li> 📍 Москва, Россия</li>
-          <li> 🚀 Полная занятость,</li>
-          <li>офис / гибрид / удаленно</li>
-          <li></li>
+          <li>📍 Москва, Россия</li>
+          <li>🚀 Полная занятость, офис / гибрид / удаленно </li>
         </ul>
+      </div>
+
+      <div class="sidebar-section">
         <h3 class="section-title">Контакты</h3>
         <ul class="info-list">
           <li>📞 <a href="tel:+79163266925">+7 (916) 326-69-25</a></li>
@@ -481,7 +491,7 @@
     
     <main class="main-content">
       
-      <div class="content-section">
+      <div class="content-section about-section">
         <h3 class="content-title">О себе</h3>
         <p class="content-text">Аналитик с опытом в IT и FinTech. Пришла в аналитику из операционного управления и ВЭД, что дало системный взгляд на бизнес-процессы. Специализируюсь на автоматизации рутинной отчетности, построении прозрачных ETL-систем и внедрении ИИ-инструментов для решения бизнес-задач.</p>
       </div>
