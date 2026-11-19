@@ -112,6 +112,7 @@
     .lang-link:hover { color: var(--color-turquoise-dark); }
     .flag-svg { border-radius: 2px; }
 
+    /* ЛЕВАЯ КОЛОНКА */
     .sidebar {
       flex: 0 0 35%;
       background-color: var(--color-dark);
@@ -123,7 +124,7 @@
 
     .profile-section {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 10px; /* Минимальный отступ для линии */
     }
 
     .profile-img {
@@ -152,21 +153,31 @@
       line-height: 1.4;
     }
 
+    /* ГОРИЗОНТАЛЬНАЯ ЛИНИЯ (Подчеркивание под должностью) */
+    .divider {
+      position: relative;
+      width: calc(100% + 30px); /* Выходит вправо в отступ */
+      height: 6px;
+      background: linear-gradient(90deg, var(--color-turquoise), var(--color-turquoise-dark));
+      border-radius: 3px;
+      margin: 0 0 25px 0; /* 0 сверху, 25 снизу */
+      z-index: 10;
+    }
+
     .sidebar-section {
       margin-bottom: 25px;
-      position: relative;
     }
     .sidebar-section:last-child { margin-bottom: 0; }
 
     .section-title {
       font-size: 0.85rem;
       font-weight: 700;
-      margin: 0 0 12px 0;
+      margin: 0 0 10px 0;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       color: var(--color-text-light);
       border-bottom: 1px solid rgba(255,255,255,0.1);
-      padding-bottom: 6px;
+      padding-bottom: 5px;
     }
 
     .info-list {
@@ -178,7 +189,7 @@
     .info-list li {
       font-size: 0.85rem;
       color: var(--color-text-light);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       line-height: 1.5;
       display: flex;
       align-items: flex-start;
@@ -223,7 +234,7 @@
       width: 100%;
       font-family: inherit;
       transition: all 0.2s;
-      margin-top: 5px;
+      margin-top: 10px;
     }
     .pdf-download-btn:hover {
       background-color: var(--color-turquoise);
@@ -233,19 +244,15 @@
     .skill-group { margin-bottom: 15px; }
     .skill-group:last-child { margin-bottom: 0; }
     .skill-name {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       color: var(--color-bg-white);
     }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-    .skill-tag {
-      background-color: rgba(255, 255, 255, 0.1);
-      color: var(--color-bg-white);
-      padding: 3px 8px;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      font-weight: 500;
+    .skill-desc {
+      font-size: 0.8rem;
+      color: var(--color-text-light);
+      line-height: 1.4;
     }
 
     .languages-text {
@@ -255,7 +262,7 @@
       margin: 0;
     }
 
-    /* --- ГЛАВНАЯ КОЛОНКА --- */
+    /* ПРАВАЯ КОЛОНКА */
     .main-content {
       flex: 1;
       padding: 30px 40px;
@@ -276,7 +283,7 @@
       font-size: 1.25rem;
       font-weight: 700;
       color: var(--color-dark);
-      margin: 0 0 12px 0;
+      margin: 0 0 15px 0;
       letter-spacing: -0.01em;
     }
 
@@ -289,19 +296,7 @@
 
     .whitespace-pre { white-space: pre-line; }
 
-    /* ДЕКОРАТИВНЫЕ ЛИНИИ (Гарантированное пересечение) */
-    .resume-container::before {
-      content: '';
-      position: absolute;
-      top: 225px; /* Фиксированная высота под шапкой */
-      left: 30px;
-      right: 40px;
-      height: 6px;
-      background: linear-gradient(90deg, var(--color-turquoise), var(--color-turquoise-dark));
-      border-radius: 3px;
-      z-index: 10;
-    }
-
+    /* ВЕРТИКАЛЬНАЯ ЛИНИЯ (Достижения) */
     .achievements-box {
       position: relative;
       padding-left: 20px;
@@ -310,14 +305,41 @@
       content: '';
       position: absolute;
       left: 0;
-      top: -27px; /* Идеальная стыковка с горизонтальной линией */
+      top: -27px; /* Поднимаем до горизонтальной линии */
       bottom: 0;
       width: 6px;
       background: linear-gradient(180deg, var(--color-turquoise), var(--color-turquoise-dark));
       border-radius: 3px;
       z-index: 5;
     }
-    .about-section { margin-bottom: 50px; }
+    .about-section { margin-bottom: 40px; }
+
+    /* УНИВЕРСАЛЬНЫЙ БЛОК С ДАТАМИ (Grid) */
+    .item-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 15px;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+    .item-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-dark);
+      line-height: 1.3;
+    }
+    .item-date {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      white-space: nowrap;
+      text-align: right;
+    }
+    .item-subtitle {
+      font-size: 0.9rem;
+      color: var(--color-turquoise-dark);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
 
     /* Аккордеон */
     details.experience-item {
@@ -331,30 +353,33 @@
     details.experience-item summary {
       cursor: pointer;
       list-style: none;
+      display: block;
+    }
+    details.experience-item summary::-webkit-details-marker { display: none; }
+    
+    .summary-wrapper {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       gap: 10px;
     }
-    details.experience-item summary::-webkit-details-marker { display: none; }
-    
-    .summary-content { display: flex; flex-direction: column; gap: 3px; }
     .summary-title {
       font-size: 1rem;
       font-weight: 700;
       color: var(--color-dark);
       line-height: 1.3;
     }
-    .summary-subtitle {
-      font-size: 0.85rem;
-      color: var(--color-turquoise-dark);
-      font-weight: 600;
-    }
     .summary-date {
       font-size: 0.8rem;
       color: var(--color-text-muted);
       white-space: nowrap;
       margin-top: 2px;
+    }
+    .summary-subtitle {
+      font-size: 0.9rem;
+      color: var(--color-turquoise-dark);
+      font-weight: 600;
+      margin-top: 4px;
     }
     details.experience-item summary::after {
       content: '▼';
@@ -367,7 +392,7 @@
     details.experience-item[open] summary::after { transform: rotate(180deg); }
     
     details.experience-item .details-content {
-      margin-top: 12px;
+      margin-top: 10px;
       padding-left: 12px;
       border-left: 2px solid var(--color-bg-light);
     }
@@ -388,15 +413,14 @@
       details > summary { display: block !important; pointer-events: none; }
       details > summary::after { display: none !important; }
       details > .details-content { display: block !important; }
-      .resume-container::before { top: 225px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .divider { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .achievements-box::before { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .skill-tag { border: 1px solid #ccc; }
     }
 
     @media (max-width: 768px) {
       #section-resume { padding: 10px; }
       .resume-container { flex-direction: column; }
-      .resume-container::before { display: none; }
+      .divider { width: 100%; margin-bottom: 20px; }
       .sidebar { padding: 30px 20px; }
       .main-content { padding: 20px; }
       .achievements-box::before { top: 0; }
@@ -424,11 +448,14 @@
         <h2 class="title">Аналитик / Инженер данных / Python-разработчик</h2>
       </div>
       
-      <div class="sidebar-section" style="margin-top: 25px;">
+      <div class="divider"></div>
+      
+      <div class="sidebar-section">
         <h3 class="section-title">Локация и занятость</h3>
         <ul class="info-list">
           <li><span class="contact-icon">📍</span> Москва, Россия</li>
-          <li><span class="contact-icon">🚀</span> Полная занятость, офис / гибрид / удаленно</li>
+          <li><span class="contact-icon">💼</span> Полная занятость</li>
+          <li><span class="contact-icon">🚀</span> Офис / гибрид / удаленно</li>
         </ul>
       </div>
 
@@ -448,7 +475,7 @@
         <ul class="info-list portfolio-list">
           <li><a href="https://listenshareanalytics.atlassian.net/wiki/spaces/bd/overview" target="_blank"><span class="contact-icon">📚</span> Data Alchemist Hub</a></li>
         </ul>
-        <button onclick="printResume()" class="pdf-download-btn" style="margin-top: 15px;">
+        <button onclick="printResume()" class="pdf-download-btn">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
           Сохранить в PDF
         </button>
@@ -457,28 +484,20 @@
       <div class="sidebar-section">
         <h3 class="section-title">Навыки</h3>
         <div class="skill-group">
-          <div class="skill-name">Code & Data</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span><span class="skill-tag">SQL</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">ClickHouse</span><span class="skill-tag">Docker</span><span class="skill-tag">Git</span>
-          </div>
+          <div class="skill-name">Инженерия данных и код</div>
+          <div class="skill-desc">Python (Pandas, NumPy), SQL (PostgreSQL, ClickHouse), API, Docker, Git, JavaScript</div>
         </div>
         <div class="skill-group">
-          <div class="skill-name">Analytics & BI</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Yandex DataLens</span><span class="skill-tag">Power BI</span><span class="skill-tag">Google Data Studio</span><span class="skill-tag">Excel</span><span class="skill-tag">Google Sheets</span>
-          </div>
+          <div class="skill-name">Аналитика и BI</div>
+          <div class="skill-desc">Yandex DataLens, Power BI, Google Data Studio, Excel (Power Query/Pivot), Google Sheets</div>
         </div>
         <div class="skill-group">
-          <div class="skill-name">Automation</div>
-          <div class="skill-tags">
-            <span class="skill-tag">n8n</span><span class="skill-tag">BPMN</span><span class="skill-tag">Jira</span><span class="skill-tag">Confluence</span><span class="skill-tag">Agile</span>
-          </div>
+          <div class="skill-name">Автоматизация и управление</div>
+          <div class="skill-desc">n8n, BPMN, Jira, Confluence, Agile</div>
         </div>
         <div class="skill-group">
-          <div class="skill-name">AI & NLP</div>
-          <div class="skill-tags">
-            <span class="skill-tag">ChatGPT</span><span class="skill-tag">DeepSeek</span><span class="skill-tag">GigaChat API</span><span class="skill-tag">Notebook LM</span>
-          </div>
+          <div class="skill-name">ИИ и NLP</div>
+          <div class="skill-desc">ChatGPT, DeepSeek, Perplexity, GigaChat API, Notebook LM</div>
         </div>
       </div>
       
@@ -511,32 +530,34 @@
         
         <details class="experience-item">
           <summary>
-            <div class="summary-content">
-              <span class="summary-title">Data Alchemist Ecosystem</span>
-              <span class="summary-subtitle">Системный аналитик / Аналитик данных / BI-аналитик</span>
+            <div class="summary-wrapper">
+              <div class="summary-title">Data Alchemist Ecosystem</div>
+              <span class="summary-date">Авг 2026 - наст. время</span>
             </div>
-            <span class="summary-date">Авг 2026 - наст. время</span>
+            <div class="summary-subtitle">Системный аналитик / Аналитик данных / BI-аналитик</div>
           </summary>
           <div class="details-content">
-            <p class="content-text whitespace-pre"><b>Задача:</b> Артефакты (CV, GitHub, Confluence, Jira, DataLens) разрозненны, сложно демонстрировать навыки.
-<b>Решение:</b> Спроектировала единую экосистему. Настроила сквозную аналитику (Метрика, DataLens). Создала базу знаний, описала бизнес-логику.
-<span class="stack-text"><b>Стек:</b> HTML, CSS, JavaScript, Confluence, Jira, Yandex DataLens, Yandex Metrika.</span>
+            <p class="content-text whitespace-pre">
+<b>Задача:</b> Профессиональные артефакты (CV, GitHub, Confluence, Jira, Yandex DataLens, LinkedIn, Google Drive, Stepik) существовали разрозненно, что затрудняло демонстрацию комплексных навыков аналитика и системного подхода. Нужно спроектировать и реализовать единую цифровую экосистему для презентации компетенций.
+<b>Решение:</b> Переработала шаблон CV. Настроила сквозную аналитику (Яндекс.Метрика) с выводом данных на дашборд в Yandex DataLens. Заполнила в едином стиле профили на Github и LinkedIn. Спроектировала архитектуру экосистемы, описала бизнес-логику. Спланировала этапы разработки, вела бэклог в Jira. Создала базу знаний в Confluence, написала всю документацию и описала кейсы. Объединила все инструменты в единый пайплайн.
+<span class="stack-text"><b>Стек:</b> Figma, HTML, CSS, JavaScript, Atlassian Confluence, Atlassian Jira, Yandex DataLens, Yandex Metrika.</span>
 <b>Ссылка:</b> <a href="https://elenaphoenix.github.io/cv/" target="_blank">Интерактивное резюме</a></p>
           </div>
         </details>
 
         <details class="experience-item">
           <summary>
-            <div class="summary-content">
-              <span class="summary-title">HH Assistant: ИИ-пайплайн для поиска работы</span>
-              <span class="summary-subtitle">Инженер данных / Python-разработчик</span>
+            <div class="summary-wrapper">
+              <div class="summary-title">HH Assistant: ИИ-пайплайн для поиска работы</div>
+              <span class="summary-date">Окт 2026 - Ноя 2026</span>
             </div>
-            <span class="summary-date">Окт 2026 - Ноя 2026</span>
+            <div class="summary-subtitle">Инженер данных / ИИ-инженер / Python-разработчик</div>
           </summary>
           <div class="details-content">
-            <p class="content-text whitespace-pre"><b>Задача:</b> Ручной перебор нерелевантных вакансий, шаблонные отклики.
-<b>Решение:</b> ETL-пайплайн (Python), API hh.ru, умный фильтр (Левенштейн), GigaChat API, PostgreSQL. 107 тестов с изоляцией ФС.
-<span class="stack-text"><b>Стек:</b> Python, PostgreSQL, GigaChat API, Docker, pytest.</span>
+            <p class="content-text whitespace-pre">
+<b>Задача:</b> Был ручной перебор тысяч нерелевантных вакансий и потеря времени на написание шаблонных сопроводительных писем. Нужно автоматизировать ETL-процесс поиска, скоринга вакансий и отправки откликов.
+<b>Решение:</b> Разработала ETL-пайплайн на Python. Настроила сбор данных через API hh.ru, разработала логику "умного фильтра" (расстояние Левенштейна, приоритет слов-исключений) для отсева нерелевантных вакансий, реализовала генерацию уникальных писем через GigaChat API. Реализовала fallback на шаблон при малом остатке токенов. Настроила пост-обработку текста через pymorphy3 (морфология). Спроектировала нормализованную ER-модель базы данных (4 таблицы с внешними ключами). Хранение истории откликов в PostgreSQL. Использовала ThreadPoolExecutor для многопоточности, contextmanager для работы с БД, модульную архитектуру (SRP). Покрыла код 107 тестами. Реализовала полную изоляцию файловой системы, чтобы тесты не ломали реальные данные. Организовала логирование, атомарную запись файлов, обработку сетевых сбоев и лимитов API.
+<span class="stack-text"><b>Стек:</b> Python, PostgreSQL, GigaChat API, Docker, pytest, ThreadPoolExecutor.</span>
 <b>Ссылка:</b> <a href="https://github.com/ElenaPhoenix/hh-assistant" target="_blank">GitHub Repository</a></p>
           </div>
         </details>
@@ -547,84 +568,160 @@
         
         <details class="experience-item">
           <summary>
-            <div class="summary-content">
-              <span class="summary-title">NDA (Международная IT-компания, GameFi)</span>
-              <span class="summary-subtitle">Аналитик данных</span>
+            <div class="summary-wrapper">
+              <div class="summary-title">NDA (Международная IT-компания, GameFi)</div>
+              <span class="summary-date">Фев 2023 - наст. время</span>
             </div>
-            <span class="summary-date">Фев 2023 - наст. время</span>
+            <div class="summary-subtitle">Аналитик данных</div>
           </summary>
           <div class="details-content">
-            <p class="content-text whitespace-pre"><b>Достижения:</b> Автоматизировала отчеты в 4 отделах (+20% продуктивности). Сократила время подготовки аналитики в 4 раза. Обучила 6 сотрудников BI-инструментам.
-<span class="stack-text"><b>Стек:</b> SQL, Python, JavaScript, API, DataLens, n8n, Jira, Confluence, Agile.</span></p>
+            <p class="content-text whitespace-pre">
+Работала с 5 отделами (поддержка, модерация, продажи, комьюнити, автоматизация).
+<b>Обязанности:</b>
+Аналитика и отчетность
+- Проводила ad-hoc исследования и когортный анализ для оценки поведения пользователей.
+- Строила продуктовые воронки и сегментировала клиентов.
+- Выявляла тренды, аномалии и формулировала гипотезы.
+- Контролировала качество данных, выявляла инциденты.
+- Разрабатывала и поддерживала BI-отчеты для бизнес-пользователей.
+- Собирала, верифицировала и формализовала бизнес-требования.
+
+Автоматизация процессов
+- Создала систему автоматизированной отчетности: от разрозненных таблиц к дашбордам в Google Sheets и Google Data Studio.
+- Внедрила систему сбора обращений поддержки: сотрудники - структурированные таблицы - агрегация через скрипты - дашборд в реальном времени.
+- Оптимизировала ETL-процессы для подготовки данных.
+- Настроила интеграцию Jira и Confluence.
+
+Администрирование и управление знаниями
+- Администрировала Jira (доступы, проекты, ведение спринтов, доски, фильтры, дашборды) и Confluence (доступы, права, структура, макросы).
+- Создала базу знаний для 2 отделов с нуля (отделы продаж и модерации; процедуры, паспорта позиций, чек-листы и др.).
+- Проводила ретроспективы и презентовала результаты руководству.
+- Выступала координатором и бизнес-ассистентом руководителя.
+
+<b>Достижения:</b>
+- Автоматизировала ручные отчеты в 4 отделах (отделы поддержки, модерации, продаж, комьюнити) - продуктивность выросла на 20%.
+- Сократила время подготовки аналитики в 4 раза (отдел модерации) за счет дашбордов.
+- Сократила время обработки обращений поддержки с 8 часов до 1 часа в неделю.
+- Создала базу знаний для 2 отделов (50+ статей, процедуры, паспорта позиций).
+- Обучила 6 сотрудников работе с BI-инструментами.
+- Внедрила отчетность для продаж - бизнес перешел к управлению на основе данных.
+<span class="stack-text"><b>Стек:</b> SQL, Python (NumPy, Pandas), JavaScript, API, Google Sheets, Google Docs, Google Data Studio, Microsoft Excel, Yandex DataLens, Intercom, AppsFlyer, корпоративная административная система, Miro, n8n, BPMN, Atlassian Jira, Atlassian Confluence, Agile.</span></p>
           </div>
         </details>
         
         <details class="experience-item">
           <summary>
-            <div class="summary-content">
-              <span class="summary-title">Комус</span>
-              <span class="summary-subtitle">Менеджер по управлению ресурсами</span>
+            <div class="summary-wrapper">
+              <div class="summary-title">Комус</div>
+              <span class="summary-date">Июн 2025 - Авг 2025</span>
             </div>
-            <span class="summary-date">Июн 2025 - Авг 2025</span>
+            <div class="summary-subtitle">Менеджер по управлению ресурсами</div>
           </summary>
           <div class="details-content">
-            <p class="content-text whitespace-pre"><b>Достижения:</b> Привела документы в Confluence к единой структуре, исправила расхождения.
-<span class="stack-text"><b>Стек:</b> Excel, SAP BO, Jira, Confluence.</span></p>
+            <p class="content-text whitespace-pre">
+<b>Обязанности:</b>
+- Подготавливала регулярную отчетность (план-факт) в Excel и SAP BO.
+- Проводила аудит Jira: проверяла корректность внесения трудозатрат, соответствие задач.
+- Анализировала доступность ресурсов на проекты.
+- Выполняла разовые поручения руководства: сбор данных и их анализ по запросу.
+- Вела внутренние справочники и инструкции в Confluence, поддерживать их в актуальном состоянии.
+
+<b>Достижения:</b>
+Привела несколько документов в Confluence к единой структуре, исправила неточности и расхождения.
+<span class="stack-text"><b>Стек:</b> Excel (Power Pivot, Power Query), SAP BO, корпоративная административная система, Atlassian Jira, Atlassian Confluence.</span></p>
           </div>
         </details>
 
         <details class="experience-item">
           <summary>
-            <div class="summary-content">
-              <span class="summary-title">ПОиК ПиО ГУ МВД РФ</span>
-              <span class="summary-subtitle">Системный аналитик</span>
+            <div class="summary-wrapper">
+              <div class="summary-title">ПОиК ПиО ГУ МВД РФ</div>
+              <span class="summary-date">Янв 2020 - Окт 2021</span>
             </div>
-            <span class="summary-date">Янв 2020 - Окт 2021</span>
+            <div class="summary-subtitle">Системный аналитик</div>
           </summary>
           <div class="details-content">
-            <p class="content-text whitespace-pre"><b>Достижения:</b> Ускорила поиск информации с нескольких дней до минут.
-<span class="stack-text"><b>Стек:</b> MS Office, внутренние БД.</span></p>
+            <p class="content-text whitespace-pre">
+<b>Обязанности:</b>
+- Выполняла обязанности по осуществлению правопорядка.
+- Работала с первичной и внутренней документацией: предобработка, очистка и подготовка данных для дальнейшего анализа.
+- Переводила данные с бумажных носителей в электронный вид.
+
+<b>Достижения:</b>
+Скорость поиска запрашиваемой информации улучшилась с нескольких дней до нескольких минут.
+<span class="stack-text"><b>Стек:</b> MS Office, внутренние базы данных.</span></p>
           </div>
         </details>
 
         <details class="experience-item">
           <summary>
-            <div class="summary-content">
-              <span class="summary-title">Т-Банк</span>
-              <span class="summary-subtitle">Специалист чат-поддержки</span>
+            <div class="summary-wrapper">
+              <div class="summary-title">Т-Банк</div>
+              <span class="summary-date">Май 2019 - Окт 2019</span>
             </div>
-            <span class="summary-date">Май 2019 - Окт 2019</span>
+            <div class="summary-subtitle">Специалист чат-поддержки</div>
           </summary>
           <div class="details-content">
-            <p class="content-text whitespace-pre"><b>Достижения:</b> Отзывы на Банки.ру, премирование.
-<span class="stack-text"><b>Стек:</b> Jira, CRM.</span></p>
+            <p class="content-text whitespace-pre">
+<b>Обязанности:</b>
+- Обеспечивала многоканальную поддержку (до 5 чатов) с соблюдением SLA.
+- Решала сложные запросы: блокировки, оспаривания, технические сбои.
+- Выявляла потребности клиентов и предлагала кросс-продукты.
+- Предотвращала эскалацию конфликтов.
+
+<b>Достижения:</b>
+По результатам работы получила положительные отзывы на независимом портале Банки.ру и была премирована.
+<span class="stack-text"><b>Стек:</b> Jira, банковские CRM-системы.</span></p>
           </div>
         </details>
 
         <details class="experience-item">
           <summary>
-            <div class="summary-content">
-              <span class="summary-title">ХимПартнеры</span>
-              <span class="summary-subtitle">Операционный менеджер</span>
+            <div class="summary-wrapper">
+              <div class="summary-title">ХимПартнеры</div>
+              <span class="summary-date">Янв 2018 - Июл 2018</span>
             </div>
-            <span class="summary-date">Янв 2018 - Июл 2018</span>
+            <div class="summary-subtitle">Операционный менеджер</div>
           </summary>
           <div class="details-content">
-            <p class="content-text whitespace-pre"><b>Достижения:</b> Грузы поставлены в срок.
+            <p class="content-text whitespace-pre">
+<b>Обязанности:</b>
+- Координировала отгрузки товара и логистику (морские и сухопутные перевозки).
+- Подготавливала документы для таможенных органов.
+- Взаимодействовала с поставщиками и логистическими компаниями по корректности заполнения документов, срокам поставки груза.
+- Контролировала соблюдение сроков поставки.
+
+<b>Достижения:</b>
+Все грузы поставлены в срок.
 <span class="stack-text"><b>Стек:</b> MS Office.</span></p>
           </div>
         </details>
 
         <details class="experience-item">
           <summary>
-            <div class="summary-content">
-              <span class="summary-title">ООО "Мясной мир"</span>
-              <span class="summary-subtitle">Менеджер по ВЭД</span>
+            <div class="summary-wrapper">
+              <div class="summary-title">ООО "Мясной мир"</div>
+              <span class="summary-date">Июл 2012 - Дек 2017</span>
             </div>
-            <span class="summary-date">Июл 2012 - Дек 2017</span>
+            <div class="summary-subtitle">Менеджер по ВЭД</div>
           </summary>
           <div class="details-content">
-            <p class="content-text whitespace-pre"><b>Достижения:</b> Сертификат «Импортер 2014». Поставки без простоев. Закупка ниже рыночных цен.
+            <p class="content-text whitespace-pre">
+Начинала с должности офис-менеджера, через 5 месяцев переведена на позицию менеджера по внешнеэкономической деятельности.
+<b>Обязанности:</b>
+- Проводила переговоры с иностранными поставщиками и логистическими компаниями, заключала контракты.
+- Закупала мясосырье у иностранных поставщиков.
+- Рассчитывала себестоимость товара и таможенные платежи.
+- Участвовала в таможенной очистке грузов.
+- Контролировала логистику (морские, сухопутные перевозки).
+- Анализировала и планировала складские остатки.
+- Вела реестр платежей.
+- Создала в Excel единую систему отслеживания грузов: от закупки до постановки на склад.
+
+<b>Достижения:</b>
+Получен сертификат «Импортер 2014 года» по группе товаров.
+Все поставки сырья осуществлялись своевременно, без простоев.
+Закупка сырья по ценам ниже рыночных.
 <span class="stack-text"><b>Стек:</b> MS Office.</span></p>
           </div>
         </details>
@@ -634,24 +731,36 @@
       <div class="content-section">
         <h3 class="content-title">Образование</h3>
         
-        <div style="margin-bottom: 15px;">
-          <div class="summary-title">Саратовский государственный университет им. Н.Г. Чернышевского</div>
-          <div class="summary-subtitle">Социально-культурный сервис и туризм | 2010</div>
+        <div class="experience-item" style="border-bottom: none; padding-bottom: 0;">
+          <div class="item-header">
+            <span class="item-title">Саратовский государственный университет им. Н.Г. Чернышевского</span>
+            <span class="item-date">2010</span>
+          </div>
+          <div class="item-subtitle">Социально-культурный сервис и туризм</div>
         </div>
         
-        <h4 class="content-title" style="font-size: 1.1rem; margin: 20px 0 10px 0;">Дополнительное образование</h4>
+        <h4 class="content-title" style="font-size: 1rem; margin: 20px 0 10px 0;">Дополнительное образование</h4>
         
-        <div style="margin-bottom: 10px;">
-          <div class="summary-title">Stepik</div>
-          <div class="summary-subtitle">Аналитика и программирование | 2026</div>
+        <div class="experience-item" style="border-bottom: none; padding: 6px 0;">
+          <div class="item-header">
+            <span class="item-title">Stepik</span>
+            <span class="item-date">2026</span>
+          </div>
+          <div class="item-subtitle" style="margin-bottom: 0;">Аналитика и программирование</div>
         </div>
-        <div style="margin-bottom: 10px;">
-          <div class="summary-title">Geekbrains</div>
-          <div class="summary-subtitle">Аналитика и программирование | 2025</div>
+        <div class="experience-item" style="border-bottom: none; padding: 6px 0;">
+          <div class="item-header">
+            <span class="item-title">Geekbrains</span>
+            <span class="item-date">2025</span>
+          </div>
+          <div class="item-subtitle" style="margin-bottom: 0;">Аналитика и программирование</div>
         </div>
-        <div style="margin-bottom: 10px;">
-          <div class="summary-title">МГИМО, Москва</div>
-          <div class="summary-subtitle">Английский язык (Upper Intermediate) | 2017</div>
+        <div class="experience-item" style="border-bottom: none; padding: 6px 0;">
+          <div class="item-header">
+            <span class="item-title">МГИМО, Москва</span>
+            <span class="item-date">2017</span>
+          </div>
+          <div class="item-subtitle" style="margin-bottom: 0;">Английский язык (Upper Intermediate)</div>
         </div>
       </div>
       
