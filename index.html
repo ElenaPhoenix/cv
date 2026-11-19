@@ -107,8 +107,8 @@
     }
 
     .profile-img {
-      width: 110px;
-      height: 110px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       object-fit: cover;
       margin: 0 auto 15px auto;
@@ -133,7 +133,7 @@
 
     .divider {
       position: relative;
-      width: calc(100% + 80px);
+      width: calc(100% + 200px);
       height: 8px;
       background: linear-gradient(90deg, var(--color-turquoise), var(--color-turquoise-dark));
       border-radius: 3px;
@@ -288,11 +288,12 @@
       content: '';
       position: absolute;
       left: 0;
-      top: 4px;
+      top: -58px;
       bottom: 4px;
       width: 8px;
       background: linear-gradient(180deg, var(--color-turquoise), var(--color-turquoise-dark));
       border-radius: 3px;
+      z-index: 5;
     }
 
     .experience-item {
@@ -784,17 +785,13 @@ function printResume() {
   const details = document.querySelectorAll('details');
   const states = [];
   
-  // 1. Запоминаем состояние и принудительно раскрываем все блоки
   details.forEach((el, index) => {
     states[index] = el.open;
     el.open = true;
   });
 
-  // 2. Вызываем печать
   window.print();
 
-  // 3. Возвращаем все обратно после закрытия диалога печати
-  // Используем setTimeout, чтобы браузер успел отрисовать печать
   setTimeout(() => {
     details.forEach((el, index) => {
       el.open = states[index];
