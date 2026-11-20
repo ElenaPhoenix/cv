@@ -117,14 +117,14 @@
       flex: 0 0 35%;
       background-color: var(--color-dark);
       color: var(--color-bg-white);
-      padding: 40px 20px 40px 35px; 
+      padding: 20px 25px 40px 25px; /* Центрирование и отступы */
       display: flex;
       flex-direction: column;
     }
 
     .profile-section {
       text-align: center;
-      margin-bottom: 15px;
+      margin-bottom: 0; /* Убираем отступ, линия сразу под текстом */
     }
 
     .profile-img {
@@ -132,7 +132,7 @@
       height: 140px;
       border-radius: 50%;
       object-fit: cover;
-      margin: 0 auto 15px auto;
+      margin: 0 auto 20px auto; /* Снизу 20px, сверху 20px padding у сайдбара */
       display: block;
       border: 3px solid var(--color-text-main);
     }
@@ -149,23 +149,23 @@
       font-size: 0.9rem;
       color: var(--color-text-light);
       font-weight: 400;
-      margin: 0;
+      margin: 0 0 5px 0;
       line-height: 1.4;
     }
 
-    /* ГОРИЗОНТАЛЬНАЯ ЛИНИЯ */
+    /* ГОРИЗОНТАЛЬНАЯ ЛИНИЯ (Тонкое подчеркивание) */
     .divider {
       position: relative;
-      width: calc(100% + 20px);
+      width: calc(100% + 25px);
       height: 6px;
       background: linear-gradient(90deg, var(--color-turquoise), var(--color-turquoise-dark));
       border-radius: 3px;
-      margin: 10px 0 20px 0;
+      margin: 0 0 24px 0; /* Без отступа сверху, 24px снизу */
       z-index: 10;
     }
 
     .sidebar-section {
-      margin-bottom: 30px;
+      margin-bottom: 24px; /* Единый отступ между блоками */
     }
     .sidebar-section:last-child { margin-bottom: 0; }
 
@@ -187,7 +187,7 @@
     .info-list li {
       font-size: 0.85rem;
       color: var(--color-text-light);
-      margin-bottom: 8px;
+      margin-bottom: 8px; /* Отступы внутри блока меньше */
       line-height: 1.5;
       display: flex;
       align-items: flex-start;
@@ -242,7 +242,7 @@
       color: var(--color-dark);
     }
 
-    .skill-group { margin-bottom: 16px; }
+    .skill-group { margin-bottom: 12px; } /* Отступы внутри блока */
     .skill-group:last-child { margin-bottom: 0; }
     .skill-name {
       font-size: 0.85rem;
@@ -274,7 +274,7 @@
     }
 
     .content-section {
-      margin-bottom: 30px;
+      margin-bottom: 24px; /* Единый отступ между блоками */
       position: relative;
       z-index: 2;
     }
@@ -297,13 +297,19 @@
 
     .whitespace-pre { white-space: pre-line; }
 
-    /* ВЕРТИКАЛЬНАЯ ЛИНИЯ (Достижения) */
+    /* БЛОК "О СЕБЕ" (Увеличенный шрифт и курсив) */
+    .about-section .content-text {
+      font-size: 1.2rem;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    /* ВЕРТИКАЛЬНАЯ ЛИНИЯ (Выделяет только блок достижений) */
     .achievements-box {
       position: relative;
-      padding-left: 20px; /* Сдвигает заголовок и текст вправо */
+      padding-left: 20px; 
     }
     
-    /* Убираем отступ сверху у заголовка внутри блока */
     .achievements-box .content-title {
       margin-top: 0;
     }
@@ -312,7 +318,7 @@
       content: '';
       position: absolute;
       left: 0;
-      top: -15px; /* Поднята, чтобы соединиться с горизонтальной линией */
+      top: 0; /* Начинается ровно с заголовка */
       bottom: 0;
       width: 6px;
       background: linear-gradient(180deg, var(--color-turquoise), var(--color-turquoise-dark));
@@ -390,7 +396,7 @@
       margin-top: 2px;
     }
     
-    /* ИСПРАВЛЕННЫЙ ТРЕУГОЛЬНИК */
+    /* ТРЕУГОЛЬНИК */
     details.experience-item summary::after {
       content: '▼';
       position: absolute;
@@ -436,7 +442,7 @@
       #section-resume { padding: 20px 10px; }
       .resume-container { flex-direction: column; }
       .divider { width: 100%; margin-bottom: 20px; }
-      .sidebar { padding: 30px 20px; }
+      .sidebar { padding: 20px 25px 40px 25px; }
       .main-content { padding: 20px; }
       .achievements-box::before { top: 0; }
       .lang-switcher { top: 10px; right: 10px; }
@@ -526,7 +532,7 @@
     
     <main class="main-content">
       
-      <div class="content-section">
+      <div class="content-section about-section">
         <h3 class="content-title">О себе</h3>
         <p class="content-text">Аналитик с опытом в IT и FinTech. Пришла в аналитику из операционного управления и ВЭД, что дало системный взгляд на бизнес-процессы. Специализируюсь на автоматизации рутинной отчетности, построении прозрачных ETL-систем и внедрении ИИ-инструментов для решения бизнес-задач.</p>
       </div>
