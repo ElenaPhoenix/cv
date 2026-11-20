@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Елена Малоросиянцева - Аналитик / Инженер данных /
-    Python-разработчик</title>
+  <title>Елена Малоросиянцева - Аналитик / Инженер данных / Python-разработчик</title>
   
   <link rel="alternate" hreflang="ru" href="https://elenaphoenix.github.io/cv/index.html" />
   <link rel="alternate" hreflang="en" href="https://elenaphoenix.github.io/cv/index-en.html" />
@@ -39,6 +38,35 @@
   <link rel="manifest" href="site.webmanifest">
   
   <style>
+    :root {
+      --color-dark: #1E293B;
+      --color-turquoise: #14B8A6;
+      --color-turquoise-dark: #0D9488;
+      --color-bg-light: #F1F5F9;
+      --color-bg-white: #FFFFFF;
+      --color-text-light: #CBD5E1;
+      --color-text-main: #334155;
+      --color-text-muted: #64748B;
+      --font-main: 'Inter', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-main);
+      margin: 0;
+      padding: 0;
+      background-color: var(--color-bg-light);
+      color: var(--color-dark);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    * { box-sizing: border-box; }
+
+    a {
+      text-decoration: none;
+      color: var(--color-turquoise);
+      transition: color 0.2s ease;
+    }
+
     #section-resume {
       padding: 40px 20px;
       display: flex;
@@ -58,52 +86,19 @@
       position: relative;
     }
 
-    .lang-switcher {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      display: flex;
-      gap: 8px;
-      z-index: 100;
-    }
-    .lang-link {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--color-text-muted);
-      padding: 4px 8px;
-      border-radius: 4px;
-      transition: all 0.2s;
-      text-decoration: none;
-    }
-    .lang-link.active {
-      color: var(--color-turquoise);
-      background: rgba(20, 184, 166, 0.1);
-    }
-    .lang-link:hover {
-      color: var(--color-turquoise);
-      text-decoration: none;
-    }
-    .flag-svg {
-      flex-shrink: 0;
-      display: inline-block;
-      vertical-align: middle;
-      border-radius: 2px;
-    }
-
+    /* ЛЕВАЯ КОЛОНКА */
     .sidebar {
       flex: 0 0 35%;
       background-color: var(--color-dark);
       color: var(--color-bg-white);
-      padding: 40px 35px;
-      position: relative;
+      padding: 20px 30px 30px 30px;
+      display: flex;
+      flex-direction: column;
     }
 
     .profile-section {
       text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 10px;
     }
 
     .profile-img {
@@ -117,43 +112,45 @@
     }
 
     .name {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      margin: 0 0 8px 0;
+      margin: 0 0 6px 0;
       line-height: 1.2;
       letter-spacing: -0.02em;
     }
 
     .title {
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: var(--color-text-light);
       font-weight: 400;
       margin: 0;
+      line-height: 1.4;
     }
 
+    /* ГОРИЗОНТАЛЬНАЯ ЛИНИЯ */
     .divider {
       position: relative;
       width: calc(100% + 80px);
-      height: 8px;
+      height: 6px;
       background: linear-gradient(90deg, var(--color-turquoise), var(--color-turquoise-dark));
       border-radius: 3px;
-      margin: 30px 0;
+      margin: 0 0 24px 0;
       z-index: 10;
     }
 
     .sidebar-section {
-      margin-bottom: 40px;
+      margin-bottom: 24px;
     }
-
-    .sidebar-section:last-child {
-      margin-bottom: 0;
-    }
+    .sidebar-section:last-child { margin-bottom: 0; }
 
     .section-title {
-      font-size: 1.1rem;
+      font-size: 0.85rem;
       font-weight: 700;
-      margin: 0 0 15px 0;
-      letter-spacing: 0.02em;
+      margin: 0 0 12px 0;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-text-light);
+      /* Убрано подчеркивание по просьбе */
     }
 
     .info-list {
@@ -165,69 +162,68 @@
     .info-list li {
       font-size: 0.85rem;
       color: var(--color-text-light);
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       line-height: 1.5;
       display: flex;
       align-items: flex-start;
-    }
-
-    .info-list li:last-child {
-      margin-bottom: 0;
+      gap: 8px;
     }
 
     .info-list a {
       color: var(--color-text-light);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
     }
 
-    .info-list a:hover {
-      color: var(--color-bg-white) !important;
+    .info-list a:hover { color: var(--color-bg-white) !important; }
+
+    .contact-icon {
+      font-size: 1rem;
+      width: 18px;
+      text-align: center;
+      flex-shrink: 0;
     }
 
-    .portfolio-list li {
-      color: rgba(20, 184, 166, 0.9);
+    .portfolio-list li a {
+      color: var(--color-turquoise);
       font-weight: 600;
     }
 
     .pdf-download-btn {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
-      padding: 10px 14px;
+      padding: 10px;
       background-color: rgba(20, 184, 166, 0.15);
       border: 1px solid var(--color-turquoise);
       border-radius: 6px;
       color: var(--color-turquoise);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
       cursor: pointer;
       width: 100%;
-      font-family: var(--font-main);
+      font-family: inherit;
+      transition: all 0.2s;
+      margin-top: 10px;
     }
     .pdf-download-btn:hover {
       background-color: var(--color-turquoise);
-      color: var(--color-dark) !important;
-      text-decoration: none;
+      color: var(--color-dark);
     }
 
-    .skill-group {
-      margin-bottom: 16px;
-    }
-
-    .skill-group:last-child {
-      margin-bottom: 0;
-    }
-
+    .skill-group { margin-bottom: 15px; }
+    .skill-group:last-child { margin-bottom: 0; }
     .skill-name {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 600;
       margin-bottom: 4px;
       color: var(--color-bg-white);
     }
-
     .skill-desc {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--color-text-light);
       line-height: 1.4;
     }
@@ -235,37 +231,57 @@
     .languages-text {
       font-size: 0.85rem;
       color: var(--color-text-light);
-      line-height: 1.5;
+      line-height: 1.6;
       margin: 0;
     }
 
+    /* ПРАВАЯ КОЛОНКА */
     .main-content {
       flex: 1;
-      padding: 25px 40px;
+      padding: 20px 40px 30px 40px;
       background-color: var(--color-bg-white);
+      display: flex;
+      flex-direction: column;
     }
+
+    /* Переключатель языков на первой строке */
+    .lang-switcher {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .lang-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+    .lang-link.active {
+      color: var(--color-turquoise-dark);
+      background: rgba(20, 184, 166, 0.1);
+    }
+    .lang-link:hover { color: var(--color-turquoise-dark); }
+    .flag-svg { border-radius: 2px; }
 
     .content-section {
-      margin-bottom: 40px;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 2;
     }
-
-    .content-section:last-child {
-      margin-bottom: 0;
-    }
+    .content-section:last-child { margin-bottom: 0; }
 
     .content-title {
-      font-size: 1.4rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: var(--color-dark);
-      margin: 0 0 20px 0;
+      margin: 0 0 15px 0;
       letter-spacing: -0.01em;
-    }
-
-    .sub-heading {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--color-dark);
-      margin: 25px 0 15px 0;
     }
 
     .content-text {
@@ -275,114 +291,133 @@
       margin: 0;
     }
 
-    .whitespace-pre {
-      white-space: pre-line;
+    .whitespace-pre { white-space: pre-line; }
+
+    /* ВИЗУАЛЬНОЕ ВЫДЕЛЕНИЕ БЛОКА "О СЕБЕ" */
+    .about-section {
+      background-color: rgba(20, 184, 166, 0.05);
+      border-left: 4px solid var(--color-turquoise);
+      padding: 15px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 24px;
+    }
+    .about-section .content-title {
+      margin-bottom: 10px;
+      color: var(--color-turquoise-dark);
     }
 
+    /* ВЕРТИКАЛЬНАЯ ЛИНИЯ (Достижения) */
     .achievements-box {
       position: relative;
-      padding-left: 18px;
+      padding-left: 20px;
     }
-
     .achievements-box::before {
       content: '';
       position: absolute;
       left: 0;
-      top: 4px;
-      bottom: 4px;
-      width: 8px;
+      top: -24px;
+      bottom: 0;
+      width: 6px;
       background: linear-gradient(180deg, var(--color-turquoise), var(--color-turquoise-dark));
       border-radius: 3px;
+      z-index: 5;
     }
 
-    .experience-item {
-      margin-bottom: 25px;
-    }
-
-    .experience-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .education-item {
-      margin-bottom: 15px;
-    }
-
-    .item-header {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--color-dark);
-      margin-bottom: 4px;
-      line-height: 1.4;
-    }
-
-    .item-subtitle {
-      font-size: 0.95rem;
-      color: var(--color-text-muted);
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-
+    /* Аккордеон (Исправленный) */
     details.experience-item {
       border-bottom: 1px solid var(--color-bg-light);
-      padding-bottom: 15px;
+      padding: 12px 0;
     }
     details.experience-item:last-child {
       border-bottom: none;
+      padding-bottom: 0;
     }
     details.experience-item summary {
       cursor: pointer;
       list-style: none;
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
       gap: 10px;
     }
-    details.experience-item summary::-webkit-details-marker {
-      display: none;
+    details.experience-item summary::-webkit-details-marker { display: none; }
+    
+    .summary-inner {
+      flex: 1;
     }
-    details.experience-item summary .summary-content {
+    .summary-header {
       display: flex;
-      flex-direction: column;
-      gap: 2px;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 15px;
+      margin-bottom: 4px;
     }
-    details.experience-item summary .summary-title {
-      font-size: 1.05rem;
+    .summary-title {
+      font-size: 1rem;
       font-weight: 700;
       color: var(--color-dark);
+      line-height: 1.3;
     }
-    details.experience-item summary .summary-subtitle {
-      font-size: 0.9rem;
+    .summary-date {
+      font-size: 0.8rem;
       color: var(--color-text-muted);
+      white-space: nowrap;
+    }
+    .summary-subtitle {
+      font-size: 0.9rem;
+      color: var(--color-turquoise-dark);
       font-weight: 600;
+      margin-top: 4px;
     }
     details.experience-item summary::after {
       content: '▼';
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       color: var(--color-turquoise);
       transition: transform 0.2s;
-      margin-top: 5px;
       flex-shrink: 0;
+      margin-top: 2px;
     }
     details.experience-item[open] summary::after {
       transform: rotate(180deg);
     }
+    
     details.experience-item .details-content {
-      margin-top: 15px;
+      margin-top: 10px;
+      padding-left: 12px;
+      border-left: 2px solid var(--color-bg-light);
+    }
+    
+    /* СТЕК ТЕКСТ */
+    .stack-text {
+      font-size: 0.95rem;
+      color: var(--color-text-main);
+      margin-top: 8px;
+      display: block;
     }
 
-    /* Скрытие лишнего при печати */
+    /* СТИЛИ ДЛЯ ПЕЧАТИ */
     @media print {
-      .pdf-download-btn { display: none !important; }
-      .lang-switcher { display: none !important; }
+      body { background-color: #fff; }
+      #section-resume { padding: 0; display: block; min-height: auto; }
+      .resume-container { box-shadow: none; border-radius: 0; max-width: 100%; }
+      .pdf-download-btn, .lang-switcher { display: none !important; }
+      details { display: block !important; }
+      details > summary { display: block !important; pointer-events: none; }
+      details > summary::after { display: none !important; }
+      details > .details-content { display: block !important; }
+      .divider { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .achievements-box::before { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .about-section { background-color: transparent; border-left: 4px solid #ccc; }
     }
 
     @media (max-width: 768px) {
-      #section-resume { padding: 20px 10px; }
+      #section-resume { padding: 10px; }
       .resume-container { flex-direction: column; }
-      .lang-switcher { top: 10px; right: 10px; }
-      .sidebar { flex: none; width: 100%; padding: 30px 20px; }
-      .divider { width: 100%; }
-      .main-content { flex: none; width: 100%; padding: 30px 20px; }
+      .divider { width: 100%; margin-bottom: 24px; }
+      .sidebar { padding: 20px 20px 30px 20px; }
+      .main-content { padding: 20px; }
+      .achievements-box::before { top: 0; }
+      .lang-switcher { margin-bottom: 15px; }
     }
   </style>
 </head>
@@ -390,64 +425,46 @@
 <section id="section-resume">
   <div class="resume-container">
     
-    <div class="lang-switcher">
-      <a href="index.html" class="lang-link active" title="Русский" aria-label="Русская версия">
-        <svg class="flag-svg" viewBox="0 0 640 480" width="16" height="12">
-          <rect width="640" height="160" fill="#fff"/>
-          <rect y="160" width="640" height="160" fill="#0039a6"/>
-          <rect y="320" width="640" height="160" fill="#d52b1e"/>
-        </svg>
-        RU
-      </a>
-      <a href="index-en.html" class="lang-link" title="English" aria-label="English version">
-        <svg class="flag-svg" viewBox="0 0 640 480" width="16" height="12">
-          <rect width="640" height="480" fill="#012169"/>
-          <path d="M0,0 L640,480 M640,0 L0,480" stroke="#fff" stroke-width="80"/>
-          <path d="M0,0 L640,480 M640,0 L0,480" stroke="#C8102E" stroke-width="40"/>
-          <rect x="280" width="80" height="480" fill="#fff"/>
-          <rect y="200" width="640" height="80" fill="#fff"/>
-          <rect x="300" width="40" height="480" fill="#C8102E"/>
-          <rect y="220" width="640" height="40" fill="#C8102E"/>
-        </svg>
-        EN
-      </a>
-    </div>
-
     <aside class="sidebar">
       <div class="profile-section">
         <img src="images/my_photo.jpg" alt="Елена Малоросиянцева" class="profile-img">
         <h1 class="name">Елена Малоросиянцева</h1>
-        <h2 class="title">Аналитик / Инженер данных /
-          Python-разработчик</h2>
+        <h2 class="title">Аналитик / Инженер данных / Python-разработчик</h2>
       </div>
       
       <div class="divider"></div>
       
       <div class="sidebar-section">
-        <h3 class="section-title">Контакты</h3>
+        <h3 class="section-title">Локация и занятость</h3>
         <ul class="info-list">
-          <li>📍 Москва, Россия</li>
-          <li>📞 <a href="tel:+79163266925">+7 (916) 326-69-25</a></li>
-          <li>💬 <a href="https://t.me/yeganebirtane" target="_blank" rel="noopener noreferrer">@yeganebirtane</a></li>
-          <li>✉️ <a href="https://mail.yandex.ru/compose?to=latikayegane@yandex.ru" target="_blank" rel="noopener noreferrer">latikayegane@yandex.ru</a></li>
-          <li>💼 <a href="https://www.linkedin.com/in/listenshareanalytics/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li>💻 <a href="https://github.com/ElenaPhoenix" target="_blank">GitHub</a></li>
-          <li>🚀 Полная занятость, офис / гибрид / удаленно </li>
+          <li><span class="contact-icon">📍</span> Москва, Россия</li>
+          <li><span class="contact-icon">⏳</span> Полная занятость</li>
+          <li><span class="contact-icon">🏢</span> Офис / гибрид / удаленно</li>
         </ul>
       </div>
-      
+
       <div class="sidebar-section">
-        <button onclick="printResume()" class="pdf-download-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-          Сохранить в PDF
-        </button>
+        <h3 class="section-title">Контакты</h3>
+        <ul class="info-list">
+          <li><a href="tel:+79163266925"><span class="contact-icon">📞</span> +7 (916) 326-69-25</a></li>
+          <li><a href="https://t.me/yeganebirtane" target="_blank"><span class="contact-icon">💬</span> @yeganebirtane</a></li>
+          <li><a href="https://mail.yandex.ru/compose?to=latikayegane@yandex.ru" target="_blank"><span class="contact-icon">✉️</span> latikayegane@yandex.ru</a></li>
+          <li><a href="https://www.linkedin.com/in/listenshareanalytics/" target="_blank"><span class="contact-icon">💼</span> LinkedIn</a></li>
+          <li><a href="https://github.com/ElenaPhoenix" target="_blank"><span class="contact-icon">💻</span> GitHub</a></li>
+        </ul>
       </div>
       
       <div class="sidebar-section">
         <h3 class="section-title">Портфолио</h3>
         <ul class="info-list portfolio-list">
-          <li>📚 <a href="https://listenshareanalytics.atlassian.net/wiki/spaces/bd/overview" target="_blank">Data Alchemist Hub (База знаний)</a></li>
+          <li><a href="https://listenshareanalytics.atlassian.net/wiki/spaces/bd/overview" target="_blank"><span class="contact-icon">📚</span> Data Alchemist Hub</a></li>
+          <li><a href="https://stepik.org/users/583419611/profile" target="_blank"><span class="contact-icon">🎓</span> Stepik (Сертификаты)</a></li>
+          <li><a href="https://drive.google.com/drive/folders/1682pWZRqctI7lBejN3QwxGaZJj60jbpm?usp=drive_link" target="_blank"><span class="contact-icon">📁</span> Google Drive (Артефакты)</a></li>
         </ul>
+        <button onclick="printResume()" class="pdf-download-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Сохранить в PDF
+        </button>
       </div>
       
       <div class="sidebar-section">
@@ -472,13 +489,22 @@
       
       <div class="sidebar-section">
         <h3 class="section-title">Языки</h3>
-        <p class="languages-text">Русский (родной), английский (С1), турецкий (С1).</p>
+        <p class="languages-text">Русский (родной)<br>Английский (С1)<br>Турецкий (С1)</p>
       </div>
     </aside>
     
     <main class="main-content">
       
-      <div class="content-section">
+      <div class="lang-switcher">
+        <a href="index.html" class="lang-link active" title="Русский">
+          <svg class="flag-svg" viewBox="0 0 640 480" width="16" height="12"><rect width="640" height="160" fill="#fff"/><rect y="160" width="640" height="160" fill="#0039a6"/><rect y="320" width="640" height="160" fill="#d52b1e"/></svg> RU
+        </a>
+        <a href="index-en.html" class="lang-link" title="English">
+          <svg class="flag-svg" viewBox="0 0 640 480" width="16" height="12"><rect width="640" height="480" fill="#012169"/><path d="M0,0 L640,480 M640,0 L0,480" stroke="#fff" stroke-width="80"/><path d="M0,0 L640,480 M640,0 L0,480" stroke="#C8102E" stroke-width="40"/><rect x="280" width="80" height="480" fill="#fff"/><rect y="200" width="640" height="80" fill="#fff"/><rect x="300" width="40" height="480" fill="#C8102E"/><rect y="220" width="640" height="40" fill="#C8102E"/></svg> EN
+        </a>
+      </div>
+
+      <div class="content-section about-section">
         <h3 class="content-title">О себе</h3>
         <p class="content-text">Аналитик с опытом в IT и FinTech. Пришла в аналитику из операционного управления и ВЭД, что дало системный взгляд на бизнес-процессы. Специализируюсь на автоматизации рутинной отчетности, построении прозрачных ETL-систем и внедрении ИИ-инструментов для решения бизнес-задач.</p>
       </div>
@@ -499,59 +525,39 @@
         
         <details class="experience-item">
           <summary>
-            <div class="summary-content">
-              <span class="summary-title">Data Alchemist Ecosystem: единая цифровая экосистема для демонстрации навыков аналитика | Август 2026 - наст. время</span>
-              <span class="summary-subtitle">Системный аналитик / Аналитик данных / BI-аналитик / Frontend-разработчик / Руководитель проекта</span>
+            <div class="summary-inner">
+              <div class="summary-header">
+                <span class="summary-title">Data Alchemist Ecosystem</span>
+                <span class="summary-date">Авг 2026 - наст. время</span>
+              </div>
+              <div class="summary-subtitle">Системный аналитик / Аналитик данных / BI-аналитик</div>
             </div>
           </summary>
           <div class="details-content">
             <p class="content-text whitespace-pre">
-<b>Задача</b> 
-Профессиональные артефакты (CV, GitHub, Confluence, Jira, Yandex DataLens, LinkedIn, Google Drive, Stepik) существовали разрозненно, что затрудняло демонстрацию комплексных навыков аналитика и системного подхода. Нужно спроектировать и реализовать единую цифровую экосистему для презентации компетенций.
-            
-<b>Решение</b>
-Переработала шаблон CV. Настроила сквозную аналитику (Яндекс.Метрика) с выводом данных на дашборд в Yandex DataLens. Заполнила в едином стиле профили на Github и LinkedIn. Спроектировала архитектуру экосистемы, описала бизнес-логику. Спланировала этапы разработки, вела бэклог в Jira. Создала базу знаний в Confluence, написала всю документацию и описала кейсы. Объединила все инструменты в единый пайплайн.
-            
-<b>Стек</b>
-- Figma,
-- HTML,
-- CSS,
-- JavaScript,              
-- Atlassian Confluence, 
-- Atlassian Jira, 
-- Yandex DataLens, 
-- Yandex Metrika.
-            
-<b>Ссылка</b> <a href="https://elenaphoenix.github.io/cv/" target="_blank">Интерактивное резюме</a>
-            </p>
+<b>Задача:</b> Профессиональные артефакты (CV, GitHub, Confluence, Jira, Yandex DataLens, LinkedIn, Google Drive, Stepik) существовали разрозненно, что затрудняло демонстрацию комплексных навыков аналитика и системного подхода. Нужно спроектировать и реализовать единую цифровую экосистему для презентации компетенций.
+<b>Решение:</b> Переработала шаблон CV. Настроила сквозную аналитику (Яндекс.Метрика) с выводом данных на дашборд в Yandex DataLens. Заполнила в едином стиле профили на Github и LinkedIn. Спроектировала архитектуру экосистемы, описала бизнес-логику. Спланировала этапы разработки, вела бэклог в Jira. Создала базу знаний в Confluence, написала всю документацию и описала кейсы. Объединила все инструменты в единый пайплайн.
+<span class="stack-text"><b>Стек:</b> Figma, HTML, CSS, JavaScript, Atlassian Confluence, Atlassian Jira, Yandex DataLens, Yandex Metrika.</span>
+<b>Ссылка:</b> <a href="https://elenaphoenix.github.io/cv/" target="_blank">Интерактивное резюме</a></p>
           </div>
         </details>
 
         <details class="experience-item">
           <summary>
-            <div class="summary-content">
-              <span class="summary-title">HH Assistant: ИИ-пайплайн для поиска работы | Октябрь 2026 - Ноябрь 2026 (2 месяца)</span>
-              <span class="summary-subtitle">Инженер данных / ИИ-инженер / Системный аналитик / Python-разработчик</span>
+            <div class="summary-inner">
+              <div class="summary-header">
+                <span class="summary-title">HH Assistant: ИИ-пайплайн для поиска работы</span>
+                <span class="summary-date">Окт 2026 - Ноя 2026</span>
+              </div>
+              <div class="summary-subtitle">Инженер данных / ИИ-инженер / Python-разработчик</div>
             </div>
           </summary>
           <div class="details-content">
             <p class="content-text whitespace-pre">
-<b>Задача</b>
-Был ручной перебор тысяч нерелевантных вакансий и потеря времени на написание шаблонных сопроводительных писем. Нужно автоматизировать ETL-процесс поиска, скоринга вакансий и отправки откликов.
-            
-<b>Решение</b>
-Разработала ETL-пайплайн на Python. Настроила сбор данных через API hh.ru, разработала логику "умного фильтра" (расстояние Левенштейна, приоритет слов-исключений) для отсева нерелевантных вакансий, реализовала генерацию уникальных писем через GigaChat API. Реализовала fallback на шаблон при малом остатке токенов. Настроила пост-обработку текста через pymorphy3 (морфология). Спроектировала нормализованную ER-модель базы данных (4 таблицы с внешними ключами). Хранение истории откликов в PostgreSQL. Использовала ThreadPoolExecutor для многопоточности, contextmanager для работы с БД, модульную архитектуру (SRP). Покрыла код 107 тестами. Реализовала полную изоляцию файловой системы, чтобы тесты не ломали реальные данные. Организовала логирование, атомарную запись файлов, обработку сетевых сбоев и лимитов API.
-            
-<b>Стек</b>
-- Python, 
-- PostgreSQL, 
-- GigaChat API,
-- Docker,
-- pytest,
-- ThreadPoolExecutor.
-            
-<b>Ссылка</b> <a href="https://github.com/ElenaPhoenix/hh-assistant" target="_blank">HH Assistant</a>
-            </p>
+<b>Задача:</b> Был ручной перебор тысяч нерелевантных вакансий и потеря времени на написание шаблонных сопроводительных писем. Нужно автоматизировать ETL-процесс поиска, скоринга вакансий и отправки откликов.
+<b>Решение:</b> Разработала ETL-пайплайн на Python. Настроила сбор данных через API hh.ru, разработала логику "умного фильтра" (расстояние Левенштейна, приоритет слов-исключений) для отсева нерелевантных вакансий, реализовала генерацию уникальных писем через GigaChat API. Реализовала fallback на шаблон при малом остатке токенов. Настроила пост-обработку текста через pymorphy3 (морфология). Спроектировала нормализованную ER-модель базы данных (4 таблицы с внешними ключами). Хранение истории откликов в PostgreSQL. Использовала ThreadPoolExecutor для многопоточности, contextmanager для работы с БД, модульную архитектуру (SRP). Покрыла код 107 тестами. Реализовала полную изоляцию файловой системы, чтобы тесты не ломали реальные данные. Организовала логирование, атомарную запись файлов, обработку сетевых сбоев и лимитов API.
+<span class="stack-text"><b>Стек:</b> Python, PostgreSQL, GigaChat API, Docker, pytest, ThreadPoolExecutor.</span>
+<b>Ссылка:</b> <a href="https://github.com/ElenaPhoenix/hh-assistant" target="_blank">GitHub Repository</a></p>
           </div>
         </details>
       </div>
@@ -561,9 +567,12 @@
         
         <details class="experience-item">
           <summary>
-            <div class="summary-content">
-              <span class="summary-title">NDA (международная IT-компания, GameFi), Москва | Февраль 2023 - наст. время</span>
-              <span class="summary-subtitle">Аналитик данных</span>
+            <div class="summary-inner">
+              <div class="summary-header">
+                <span class="summary-title">NDA (Международная IT-компания, GameFi)</span>
+                <span class="summary-date">Фев 2023 - наст. время</span>
+              </div>
+              <div class="summary-subtitle">Аналитик данных</div>
             </div>
           </summary>
           <div class="details-content">
@@ -598,34 +607,18 @@
 - Создала базу знаний для 2 отделов (50+ статей, процедуры, паспорта позиций).
 - Обучила 6 сотрудников работе с BI-инструментами.
 - Внедрила отчетность для продаж - бизнес перешел к управлению на основе данных.
-
-<b>Стек</b>
-- SQL,
-- Python (NumPy, Pandas),
-- JavaScript,
-- API,
-- Google Sheets,
-- Google Docs,
-- Google Data Studio,
-- Microsoft Excel,
-- Yandex DataLens,
-- Intercom,
-- AppsFlyer,
-- корпоративная административная система,
-- Miro,
-- n8n,
-- BPMN,
-- Atlassian Jira,
-- Atlassian Confluence,
-- Agile.</p>
+<span class="stack-text"><b>Стек:</b> SQL, Python (NumPy, Pandas), JavaScript, API, Google Sheets, Google Docs, Google Data Studio, Microsoft Excel, Yandex DataLens, Intercom, AppsFlyer, корпоративная административная система, Miro, n8n, BPMN, Atlassian Jira, Atlassian Confluence, Agile.</span></p>
           </div>
         </details>
         
         <details class="experience-item">
           <summary>
-            <div class="summary-content">
-              <span class="summary-title">Комус, Москва | Июнь 2025 - Август 2025 (3 месяца)</span>
-              <span class="summary-subtitle">Менеджер по управлению ресурсами</span>
+            <div class="summary-inner">
+              <div class="summary-header">
+                <span class="summary-title">Комус</span>
+                <span class="summary-date">Июн 2025 - Авг 2025</span>
+              </div>
+              <div class="summary-subtitle">Менеджер по управлению ресурсами</div>
             </div>
           </summary>
           <div class="details-content">
@@ -639,21 +632,18 @@
 
 <b>Достижения</b>
 Привела несколько документов в Confluence к единой структуре, исправила неточности и расхождения.
-
-<b>Стек</b>
-- Excel (Power Pivot, Power Query),
-- SAP BO,
-- корпоративная административная система,
-- Atlassian Jira,
-- Atlassian Confluence.</p>
+<span class="stack-text"><b>Стек:</b> Excel (Power Pivot, Power Query), SAP BO, корпоративная административная система, Atlassian Jira, Atlassian Confluence.</span></p>
           </div>
         </details>
 
         <details class="experience-item">
           <summary>
-            <div class="summary-content">
-              <span class="summary-title">ПОиК ПиО ГУ МВД РФ, Москва | Январь 2020 - Октябрь 2021 (1 год 10 месяцев)</span>
-              <span class="summary-subtitle">Системный аналитик</span>
+            <div class="summary-inner">
+              <div class="summary-header">
+                <span class="summary-title">ПОиК ПиО ГУ МВД РФ</span>
+                <span class="summary-date">Янв 2020 - Окт 2021</span>
+              </div>
+              <div class="summary-subtitle">Системный аналитик</div>
             </div>
           </summary>
           <div class="details-content">
@@ -665,18 +655,18 @@
 
 <b>Достижения</b>
 Скорость поиска запрашиваемой информации улучшилась с нескольких дней до нескольких минут.
-
-<b>Стек</b>
-- MS Office,
-- внутренние базы данных.</p>
+<span class="stack-text"><b>Стек:</b> MS Office, внутренние базы данных.</span></p>
           </div>
         </details>
 
         <details class="experience-item">
           <summary>
-            <div class="summary-content">
-              <span class="summary-title">Т-Банк, Москва | Май 2019 - Октябрь 2019 (6 месяцев)</span>
-              <span class="summary-subtitle">Специалист чат-поддержки</span>
+            <div class="summary-inner">
+              <div class="summary-header">
+                <span class="summary-title">Т-Банк</span>
+                <span class="summary-date">Май 2019 - Окт 2019</span>
+              </div>
+              <div class="summary-subtitle">Специалист чат-поддержки</div>
             </div>
           </summary>
           <div class="details-content">
@@ -689,18 +679,18 @@
 
 <b>Достижения</b>
 По результатам работы получила положительные отзывы на независимом портале Банки.ру и была премирована.
-
-<b>Стек</b>
-- Jira,
-- банковские CRM-системы.</p>
+<span class="stack-text"><b>Стек:</b> Jira, банковские CRM-системы.</span></p>
           </div>
         </details>
 
         <details class="experience-item">
           <summary>
-            <div class="summary-content">
-              <span class="summary-title">ХимПартнеры, Москва | Январь 2018 - Июль 2018 (7 месяцев)</span>
-              <span class="summary-subtitle">Операционный менеджер</span>
+            <div class="summary-inner">
+              <div class="summary-header">
+                <span class="summary-title">ХимПартнеры</span>
+                <span class="summary-date">Янв 2018 - Июл 2018</span>
+              </div>
+              <div class="summary-subtitle">Операционный менеджер</div>
             </div>
           </summary>
           <div class="details-content">
@@ -713,17 +703,18 @@
 
 <b>Достижения</b>
 Все грузы поставлены в срок.
-
-<b>Стек</b>
-- MS Office.</p>
+<span class="stack-text"><b>Стек:</b> MS Office.</span></p>
           </div>
         </details>
 
         <details class="experience-item">
           <summary>
-            <div class="summary-content">
-              <span class="summary-title">ООО "Мясной мир", Москва | Июль 2012 - Декабрь 2017 (5 лет 6 месяцев)</span>
-              <span class="summary-subtitle">Менеджер по ВЭД</span>
+            <div class="summary-inner">
+              <div class="summary-header">
+                <span class="summary-title">ООО "Мясной мир"</span>
+                <span class="summary-date">Июл 2012 - Дек 2017</span>
+              </div>
+              <div class="summary-subtitle">Менеджер по ВЭД</div>
             </div>
           </summary>
           <div class="details-content">
@@ -744,9 +735,7 @@
 Получен сертификат «Импортер 2014 года» по группе товаров.
 Все поставки сырья осуществлялись своевременно, без простоев.
 Закупка сырья по ценам ниже рыночных.
-
-<b>Стек</b>
-- MS Office.</p>
+<span class="stack-text"><b>Стек:</b> MS Office.</span></p>
           </div>
         </details>
 
@@ -755,23 +744,36 @@
       <div class="content-section">
         <h3 class="content-title">Образование</h3>
         
-        <div class="education-item">
-          <div class="item-header">Саратовский государственный университет им. Н.Г. Чернышевского</div>
-          <div class="item-subtitle">Социально-культурный сервис и туризм | 2010</div>
+        <div class="experience-item" style="border-bottom: none; padding-bottom: 0;">
+          <div class="summary-header" style="margin-bottom: 4px;">
+            <span class="summary-title">Саратовский государственный университет им. Н.Г. Чернышевского</span>
+            <span class="summary-date">2010</span>
+          </div>
+          <div class="summary-subtitle">Социально-культурный сервис и туризм</div>
         </div>
         
-        <h4 class="sub-heading">Дополнительное образование</h4>
-        <div class="education-item">
-          <div class="item-header">Stepik</div>
-          <div class="item-subtitle">Аналитика и программирование | 2026</div>
+        <h4 class="content-title" style="font-size: 1rem; margin: 20px 0 10px 0;">Дополнительное образование</h4>
+        
+        <div class="experience-item" style="border-bottom: none; padding: 6px 0;">
+          <div class="summary-header" style="margin-bottom: 4px;">
+            <span class="summary-title">Stepik</span>
+            <span class="summary-date">2026</span>
+          </div>
+          <div class="summary-subtitle" style="margin-bottom: 0;">Аналитика и программирование</div>
         </div>
-        <div class="education-item">
-          <div class="item-header">Geekbrains</div>
-          <div class="item-subtitle">Аналитика и программирование | 2025</div>
+        <div class="experience-item" style="border-bottom: none; padding: 6px 0;">
+          <div class="summary-header" style="margin-bottom: 4px;">
+            <span class="summary-title">Geekbrains</span>
+            <span class="summary-date">2025</span>
+          </div>
+          <div class="summary-subtitle" style="margin-bottom: 0;">Аналитика и программирование</div>
         </div>
-        <div class="education-item">
-          <div class="item-header">МГИМО, Москва</div>
-          <div class="item-subtitle">Английский язык (Upper Intermediate) | 2017</div>
+        <div class="experience-item" style="border-bottom: none; padding: 6px 0;">
+          <div class="summary-header" style="margin-bottom: 4px;">
+            <span class="summary-title">МГИМО, Москва</span>
+            <span class="summary-date">2017</span>
+          </div>
+          <div class="summary-subtitle" style="margin-bottom: 0;">Английский язык (Upper Intermediate)</div>
         </div>
       </div>
       
@@ -783,23 +785,9 @@
 function printResume() {
   const details = document.querySelectorAll('details');
   const states = [];
-  
-  // 1. Запоминаем состояние и принудительно раскрываем все блоки
-  details.forEach((el, index) => {
-    states[index] = el.open;
-    el.open = true;
-  });
-
-  // 2. Вызываем печать
+  details.forEach((el, index) => { states[index] = el.open; el.open = true; });
   window.print();
-
-  // 3. Возвращаем все обратно после закрытия диалога печати
-  // Используем setTimeout, чтобы браузер успел отрисовать печать
-  setTimeout(() => {
-    details.forEach((el, index) => {
-      el.open = states[index];
-    });
-  }, 500); 
+  setTimeout(() => { details.forEach((el, index) => { el.open = states[index]; }); }, 500); 
 }
 </script>
 </body>
