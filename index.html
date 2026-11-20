@@ -68,7 +68,7 @@
     }
 
     #section-resume {
-      padding: 40px 20px; /* Восстановлены прежние поля */
+      padding: 40px 20px;
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -117,7 +117,7 @@
       flex: 0 0 35%;
       background-color: var(--color-dark);
       color: var(--color-bg-white);
-      padding: 40px 20px 40px 35px; /* Прежние поля, но справа 20px для узкого зазора */
+      padding: 40px 20px 40px 35px; 
       display: flex;
       flex-direction: column;
     }
@@ -156,7 +156,7 @@
     /* ГОРИЗОНТАЛЬНАЯ ЛИНИЯ */
     .divider {
       position: relative;
-      width: calc(100% + 20px); /* Доходит до правого края сайдбара */
+      width: calc(100% + 20px);
       height: 6px;
       background: linear-gradient(90deg, var(--color-turquoise), var(--color-turquoise-dark));
       border-radius: 3px;
@@ -165,7 +165,7 @@
     }
 
     .sidebar-section {
-      margin-bottom: 30px; /* Прежние отступы */
+      margin-bottom: 30px;
     }
     .sidebar-section:last-child { margin-bottom: 0; }
 
@@ -175,7 +175,7 @@
       margin: 0 0 12px 0;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: var(--color-turquoise); /* Цвет вместо подчеркивания */
+      color: var(--color-turquoise); 
     }
 
     .info-list {
@@ -266,7 +266,7 @@
     /* ПРАВАЯ КОЛОНКА */
     .main-content {
       flex: 1;
-      padding: 40px 40px 40px 15px; /* Прежние поля, но слева 15px для узкого зазора */
+      padding: 40px 40px 40px 15px;
       background-color: var(--color-bg-white);
       position: relative;
       display: flex;
@@ -274,7 +274,7 @@
     }
 
     .content-section {
-      margin-bottom: 30px; /* Прежние отступы */
+      margin-bottom: 30px;
       position: relative;
       z-index: 2;
     }
@@ -297,35 +297,22 @@
 
     .whitespace-pre { white-space: pre-line; }
 
-    /* КАРТОЧКА "О СЕБЕ" (Элегантное выделение без линий) */
-    .about-section {
-      background-color: #F8FAFC; /* Очень светлый серый */
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Мягкая тень */
-      margin-top: 25px; /* Сдвиг вниз от переключателя */
-      margin-bottom: 30px;
-    }
-    .about-section .content-title {
-      margin-top: 0;
-    }
-
     /* ВЕРТИКАЛЬНАЯ ЛИНИЯ (Достижения) */
     .achievements-box {
       position: relative;
-      padding-left: 20px; /* Текст сдвинут вправо */
+      padding-left: 20px; /* Сдвигает заголовок и текст вправо */
     }
     
-    /* Выравниваем заголовок по тексту */
+    /* Убираем отступ сверху у заголовка внутри блока */
     .achievements-box .content-title {
-      padding-left: 20px; 
+      margin-top: 0;
     }
 
     .achievements-box::before {
       content: '';
       position: absolute;
       left: 0;
-      top: -18px; /* Идеальная стыковка с горизонтальной линией */
+      top: -15px; /* Поднята, чтобы соединиться с горизонтальной линией */
       bottom: 0;
       width: 6px;
       background: linear-gradient(180deg, var(--color-turquoise), var(--color-turquoise-dark));
@@ -414,7 +401,7 @@
       transition: transform 0.2s;
     }
     details.experience-item[open] summary::after {
-      transform: rotate(180deg); /* Указывает вверх при раскрытии */
+      transform: rotate(180deg); 
     }
     
     details.experience-item .details-content {
@@ -423,7 +410,7 @@
       border-left: 2px solid var(--color-bg-light);
     }
     
-    /* СТЕК ТЕКСТ (Как основной текст) */
+    /* СТЕК ТЕКСТ */
     .stack-text {
       font-size: 0.95rem;
       color: var(--color-text-main);
@@ -539,14 +526,14 @@
     
     <main class="main-content">
       
-      <div class="content-section about-section">
+      <div class="content-section">
         <h3 class="content-title">О себе</h3>
         <p class="content-text">Аналитик с опытом в IT и FinTech. Пришла в аналитику из операционного управления и ВЭД, что дало системный взгляд на бизнес-процессы. Специализируюсь на автоматизации рутинной отчетности, построении прозрачных ETL-систем и внедрении ИИ-инструментов для решения бизнес-задач.</p>
       </div>
       
       <div class="content-section">
-        <h3 class="content-title">Ключевые достижения</h3>
         <div class="achievements-box">
+          <h3 class="content-title">Ключевые достижения</h3>
           <p class="content-text whitespace-pre">📈 Автоматизировала ключевые процессы в 4 отделах - продуктивность выросла на 20%
 ⏳ Внедрила систему оперативной отчетности - время подготовки аналитики сократилось в 4 раза
 📚 Создала с нуля корпоративную базу знаний для 2 отделов (50+ статей, процедуры, чек-листы)
