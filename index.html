@@ -155,7 +155,7 @@
 
     .divider {
       position: relative;
-      width: calc(100% + 25px);
+      width: calc(100% + 50px);
       height: 6px;
       background: linear-gradient(90deg, var(--color-turquoise), var(--color-turquoise-dark));
       border-radius: 3px;
@@ -225,7 +225,6 @@
       width: 100%;
       font-family: inherit;
       transition: all 0.2s;
-      /* margin-top: 10px; УБРАНО */
     }
     .pdf-download-btn:hover {
       background-color: var(--color-turquoise);
@@ -485,6 +484,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
           Сохранить в PDF
         </button>
+      <div style="height: 15px;"></div> <!-- Пустая строка перед блоком -->  
       </div>
       
       <div class="sidebar-section">
@@ -516,10 +516,9 @@
     <main class="main-content">
       
       <div style="height: 15px;"></div> <!-- Пустая строка перед блоком -->
-
       <div class="content-section about-section">
         <h3 class="content-title">О себе</h3>
-        <p class="content-text">Аналитик с опытом в IT и FinTech. Пришла в аналитику из операционного управления и ВЭД, что дало системный взгляд на бизнес-процессы.<br><br>Специализируюсь на автоматизации рутинной отчетности, построении прозрачных ETL-систем и внедрении ИИ-инструментов для решения бизнес-задач.</p>
+        <p class="content-text">Аналитик с опытом в IT и FinTech. Пришла в аналитику из операционного управления и ВЭД, что дало системный взгляд на бизнес-процессы.<br>Специализируюсь на автоматизации рутинной отчетности, построении прозрачных ETL-систем и внедрении ИИ-инструментов для решения бизнес-задач.</p>
       </div>
       
       <div class="content-section">
@@ -810,7 +809,7 @@
         
         <div class="experience-item" style="border-bottom: none; padding-bottom: 0;">
           <div class="item-header">
-            <span class="item-title">Саратовский государственный университет им. Н.Г. Чернышевского, Саратов</span>
+            <span class="item-title">Саратовский государственный университет имени Н.Г. Чернышевского, Саратов</span>
             <span class="item-date">2010</span>
           </div>
           <div class="item-subtitle">Социально-культурный сервис и туризм</div>
@@ -838,6 +837,13 @@
             <span class="item-date">2017</span>
           </div>
           <div class="item-subtitle" style="margin-bottom: 0;">Английский язык (Upper Intermediate)</div>
+        </div>
+        <div class="experience-item" style="border-bottom: none; padding: 4px 0;">
+          <div class="item-header">
+            <span class="item-title">Саратовский государственный университет имени Н.Г. Чернышевского, Саратов</span>
+            <span class="item-date">2010</span>
+          </div>
+          <div class="item-subtitle" style="margin-bottom: 0;">Турецкий язык (Upper Intermediate)</div>
         </div>
       </div>
       
