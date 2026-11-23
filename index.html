@@ -117,14 +117,14 @@
       flex: 0 0 35%;
       background-color: var(--color-dark);
       color: var(--color-bg-white);
-      padding: 20px 25px 40px 25px; /* Центрирование и отступы */
+      padding: 15px 25px 40px 25px; /* Поднято на 5px */
       display: flex;
       flex-direction: column;
     }
 
     .profile-section {
       text-align: center;
-      margin-bottom: 0; /* Убираем отступ, линия сразу под текстом */
+      margin-bottom: 0;
     }
 
     .profile-img {
@@ -132,7 +132,7 @@
       height: 140px;
       border-radius: 50%;
       object-fit: cover;
-      margin: 0 auto 20px auto; /* Снизу 20px, сверху 20px padding у сайдбара */
+      margin: 0 auto 15px auto; /* Отступ снизу 15px */
       display: block;
       border: 3px solid var(--color-text-main);
     }
@@ -153,19 +153,19 @@
       line-height: 1.4;
     }
 
-    /* ГОРИЗОНТАЛЬНАЯ ЛИНИЯ (Тонкое подчеркивание) */
+    /* ГОРИЗОНТАЛЬНАЯ ЛИНИЯ */
     .divider {
       position: relative;
-      width: calc(100% + 60px);
+      width: calc(100% + 25px);
       height: 6px;
       background: linear-gradient(90deg, var(--color-turquoise), var(--color-turquoise-dark));
       border-radius: 3px;
-      margin: 0 0 24px 0; /* Без отступа сверху, 24px снизу */
+      margin: 0 0 24px 0;
       z-index: 10;
     }
 
     .sidebar-section {
-      margin-bottom: 24px; /* Единый отступ между блоками */
+      margin-bottom: 24px; 
     }
     .sidebar-section:last-child { margin-bottom: 0; }
 
@@ -187,7 +187,7 @@
     .info-list li {
       font-size: 0.85rem;
       color: var(--color-text-light);
-      margin-bottom: 8px; /* Отступы внутри блока меньше */
+      margin-bottom: 8px; 
       line-height: 1.5;
       display: flex;
       align-items: flex-start;
@@ -196,10 +196,7 @@
 
     .info-list a {
       color: var(--color-text-light);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      width: 100%;
+      display: inline; /* Чтобы иконка не была ссылкой */
     }
 
     .info-list a:hover { color: var(--color-bg-white) !important; }
@@ -209,14 +206,6 @@
       width: 18px;
       text-align: center;
       flex-shrink: 0;
-    }
-
-    .portfolio-list li a {
-      color: var(--color-text-light);
-      font-weight: 500;
-    }
-    .portfolio-list li a:hover {
-      color: var(--color-bg-white) !important;
     }
 
     .pdf-download-btn {
@@ -235,14 +224,14 @@
       width: 100%;
       font-family: inherit;
       transition: all 0.2s;
-      margin-top: 15px;
+      margin-top: 5px;
     }
     .pdf-download-btn:hover {
       background-color: var(--color-turquoise);
       color: var(--color-dark);
     }
 
-    .skill-group { margin-bottom: 12px; } /* Отступы внутри блока */
+    .skill-group { margin-bottom: 12px; } 
     .skill-group:last-child { margin-bottom: 0; }
     .skill-name {
       font-size: 0.85rem;
@@ -274,7 +263,7 @@
     }
 
     .content-section {
-      margin-bottom: 24px; /* Единый отступ между блоками */
+      margin-bottom: 24px; 
       position: relative;
       z-index: 2;
     }
@@ -295,8 +284,6 @@
       margin: 0;
     }
 
-    .whitespace-pre { white-space: pre-line; }
-
     /* ВЕРТИКАЛЬНАЯ ЛИНИЯ (Выделяет только блок достижений) */
     .achievements-box {
       position: relative;
@@ -311,7 +298,7 @@
       content: '';
       position: absolute;
       left: 0;
-      top: 0; /* Начинается ровно с заголовка */
+      top: 0; 
       bottom: 0;
       width: 6px;
       background: linear-gradient(180deg, var(--color-turquoise), var(--color-turquoise-dark));
@@ -408,14 +395,6 @@
       padding-left: 12px;
       border-left: 2px solid var(--color-bg-light);
     }
-    
-    /* СТЕК ТЕКСТ */
-    .stack-text {
-      font-size: 0.95rem;
-      color: var(--color-text-main);
-      margin-top: 8px;
-      display: block;
-    }
 
     /* СТИЛИ ДЛЯ ПЕЧАТИ */
     @media print {
@@ -435,7 +414,7 @@
       #section-resume { padding: 20px 10px; }
       .resume-container { flex-direction: column; }
       .divider { width: 100%; margin-bottom: 20px; }
-      .sidebar { padding: 20px 25px 40px 25px; }
+      .sidebar { padding: 15px 25px 40px 25px; }
       .main-content { padding: 20px; }
       .achievements-box::before { top: 0; }
       .lang-switcher { top: 10px; right: 10px; }
@@ -476,25 +455,28 @@
       <div class="sidebar-section">
         <h3 class="section-title">Контакты</h3>
         <ul class="info-list">
-          <li><a href="tel:+79163266925"><span class="contact-icon">📞</span> +7 (916) 326-69-25</a></li>
-          <li><a href="https://t.me/yeganebirtane" target="_blank"><span class="contact-icon">💬</span> @yeganebirtane</a></li>
-          <li><a href="https://mail.yandex.ru/compose?to=latikayegane@yandex.ru" target="_blank"><span class="contact-icon">✉️</span> latikayegane@yandex.ru</a></li>
-          <li><a href="https://www.linkedin.com/in/listenshareanalytics/" target="_blank"><span class="contact-icon">🔗</span> LinkedIn</a></li>
-          <li><a href="https://github.com/ElenaPhoenix" target="_blank"><span class="contact-icon">💻</span> GitHub</a></li>
+          <li><span class="contact-icon">📞</span> <a href="tel:+79163266925">+7 (916) 326-69-25</a></li>
+          <li><span class="contact-icon">✈️</span> <a href="https://t.me/yeganebirtane" target="_blank">@yeganebirtane</a></li>
+          <li><span class="contact-icon">📧</span> <a href="https://mail.yandex.ru/compose?to=latikayegane@yandex.ru" target="_blank">latikayegane@yandex.ru</a></li>
+          <li><span class="contact-icon">🧑‍💼</span> <a href="https://www.linkedin.com/in/listenshareanalytics/" target="_blank">LinkedIn</a></li>
+          <li><span class="contact-icon">💻</span> <a href="https://github.com/ElenaPhoenix" target="_blank">GitHub</a></li>
         </ul>
       </div>
       
-      <div class="sidebar-section">
-        <h3 class="section-title">Портфолио</h3>
-        <ul class="info-list portfolio-list">
-          <li><a href="https://listenshareanalytics.atlassian.net/wiki/spaces/bd/overview" target="_blank"><span class="contact-icon">📚</span> Data Alchemist Hub (База знаний)</a></li>
-          <li><a href="https://stepik.org/users/583419611/profile" target="_blank"><span class="contact-icon">🎓</span> Stepik (Сертификаты)</a></li>
-          <li><a href="https://drive.google.com/drive/folders/1682pWZRqctI7lBejN3QwxGaZJj60jbpm?usp=drive_link" target="_blank"><span class="contact-icon">📁</span> Google Drive (Артефакты)</a></li>
-        </ul>
+      <div class="sidebar-section" style="margin-bottom: 16px;">
         <button onclick="printResume()" class="pdf-download-btn">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
           Сохранить в PDF
         </button>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="section-title">Портфолио</h3>
+        <ul class="info-list portfolio-list">
+          <li><span class="contact-icon">📚</span> <a href="https://listenshareanalytics.atlassian.net/wiki/spaces/bd/overview" target="_blank">Data Alchemist Hub (База знаний)</a></li>
+          <li><span class="contact-icon">🎓</span> <a href="https://stepik.org/users/583419611/profile" target="_blank">Stepik (Сертификаты)</a></li>
+          <li><span class="contact-icon">📁</span> <a href="https://drive.google.com/drive/folders/1682pWZRqctI7lBejN3QwxGaZJj60jbpm?usp=drive_link" target="_blank">Google Drive (Артефакты)</a></li>
+        </ul>
       </div>
       
       <div class="sidebar-section">
@@ -525,19 +507,19 @@
     
     <main class="main-content">
       
-      <div class="content-section">
-        <p class="content-text"> </p>
+      <div style="height: 15px;"></div> <!-- 1 пустая строка перед блоком -->
+
+      <div class="content-section about-section">
         <h3 class="content-title">О себе</h3>
-        <p class="content-text">Аналитик с опытом в IT и FinTech. Пришла в аналитику из операционного управления и ВЭД, что дало системный взгляд на бизнес-процессы.</p>
-        <p class="content-text">Специализируюсь на автоматизации рутинной отчетности, построении прозрачных ETL-систем и внедрении ИИ-инструментов для решения бизнес-задач.</p>
+        <p class="content-text">Аналитик с опытом в IT и FinTech. Пришла в аналитику из операционного управления и ВЭД, что дало системный взгляд на бизнес-процессы.<br><br>Специализируюсь на автоматизации рутинной отчетности, построении прозрачных ETL-систем и внедрении ИИ-инструментов для решения бизнес-задач.</p>
       </div>
       
       <div class="content-section">
         <div class="achievements-box">
           <h3 class="content-title">Ключевые достижения</h3>
           <p class="content-text whitespace-pre">📈 Автоматизировала ключевые процессы в 4 отделах - продуктивность выросла на 20%
-⏳ Внедрила систему оперативной отчетности - время подготовки аналитики сократилось в 4 раза
-📚 Создала с нуля корпоративную базу знаний для 2 отделов (50+ статей, процедуры, чек-листы)
+⏱️ Внедрила систему оперативной отчетности - время подготовки аналитики сократилось в 4 раза
+📖 Создала с нуля корпоративную базу знаний для 2 отделов (50+ статей, процедуры, чек-листы)
 🎯 Перевела отдел продаж на управление на основе данных вместо интуиции
 👥 Выстроила процессы обучения и адаптации: 6 сотрудников освоили BI-инструменты</p>
         </div>
@@ -555,29 +537,36 @@
             <div class="summary-subtitle">Системный аналитик / Аналитик данных / BI-аналитик</div>
           </summary>
           <div class="details-content">
-            <p class="content-text whitespace-pre">
-<b>Задача</b>
-Профессиональные артефакты (CV, GitHub, Confluence, Jira, Yandex DataLens, LinkedIn, Google Drive, Stepik) существовали разрозненно, что затрудняло демонстрацию комплексных навыков аналитика и системного подхода. Нужно спроектировать и реализовать единую цифровую экосистему для презентации компетенций.
-<b>Решение:</b> Переработала шаблон CV. Настроила сквозную аналитику (Яндекс.Метрика) с выводом данных на дашборд в Yandex DataLens. Заполнила в едином стиле профили на Github и LinkedIn. Спроектировала архитектуру экосистемы, описала бизнес-логику. Спланировала этапы разработки, вела бэклог в Jira. Создала базу знаний в Confluence, написала всю документацию и описала кейсы. Объединила все инструменты в единый пайплайн.
-<span class="stack-text"><b>Стек:</b> Figma, HTML, CSS, JavaScript, Atlassian Confluence, Atlassian Jira, Yandex DataLens, Yandex Metrika.</span>
-<b>Ссылка:</b> <a href="https://elenaphoenix.github.io/cv/" target="_blank">Интерактивное резюме</a></p>
+            <p class="content-text">
+            <b>Задача</b><br>Профессиональные артефакты (CV, GitHub, Confluence, Jira, Yandex DataLens, LinkedIn, Google Drive, Stepik) существовали разрозненно, что затрудняло демонстрацию комплексных навыков аналитика и системного подхода. Нужно спроектировать и реализовать единую цифровую экосистему для презентации компетенций.
+            <br><br>
+            <b>Решение</b><br>Переработала шаблон CV. Настроила сквозную аналитику (Яндекс.Метрика) с выводом данных на дашборд в Yandex DataLens. Заполнила в едином стиле профили на Github и LinkedIn. Спроектировала архитектуру экосистемы, описала бизнес-логику. Спланировала этапы разработки, вела бэклог в Jira. Создала базу знаний в Confluence, написала всю документацию и описала кейсы. Объединила все инструменты в единый пайплайн.
+            <br><br>
+            <b>Стек</b><br>Figma, HTML, CSS, JavaScript, Atlassian Confluence, Atlassian Jira, Yandex DataLens, Yandex Metrika.
+            <br><br>
+            <b>Ссылка:</b> <a href="https://elenaphoenix.github.io/cv/" target="_blank">Интерактивное резюме</a>
+            </p>
           </div>
         </details>
 
         <details class="experience-item">
           <summary>
             <div class="summary-wrapper">
-              <div class="summary-title">HH Assistant</div>
+              <div class="summary-title">HH Assistant: ИИ-пайплайн для поиска работы</div>
               <span class="summary-date">Окт 2026 - Ноя 2026</span>
             </div>
             <div class="summary-subtitle">Инженер данных / ИИ-инженер / Python-разработчик</div>
           </summary>
           <div class="details-content">
-            <p class="content-text whitespace-pre">
-<b>Задача:</b> Был ручной перебор тысяч нерелевантных вакансий и потеря времени на написание шаблонных сопроводительных писем. Нужно автоматизировать ETL-процесс поиска, скоринга вакансий и отправки откликов.
-<b>Решение:</b> Разработала ETL-пайплайн на Python. Настроила сбор данных через API hh.ru, разработала логику "умного фильтра" (расстояние Левенштейна, приоритет слов-исключений) для отсева нерелевантных вакансий, реализовала генерацию уникальных писем через GigaChat API. Реализовала fallback на шаблон при малом остатке токенов. Настроила пост-обработку текста через pymorphy3 (морфология). Спроектировала нормализованную ER-модель базы данных (4 таблицы с внешними ключами). Хранение истории откликов в PostgreSQL. Использовала ThreadPoolExecutor для многопоточности, contextmanager для работы с БД, модульную архитектуру (SRP). Покрыла код 107 тестами. Реализовала полную изоляцию файловой системы, чтобы тесты не ломали реальные данные. Организовала логирование, атомарную запись файлов, обработку сетевых сбоев и лимитов API.
-<span class="stack-text"><b>Стек:</b> Python, PostgreSQL, GigaChat API, Docker, pytest, ThreadPoolExecutor.</span>
-<b>Ссылка:</b> <a href="https://github.com/ElenaPhoenix/hh-assistant" target="_blank">GitHub Repository</a></p>
+            <p class="content-text">
+            <b>Задача</b><br>Был ручной перебор тысяч нерелевантных вакансий и потеря времени на написание шаблонных сопроводительных писем. Нужно автоматизировать ETL-процесс поиска, скоринга вакансий и отправки откликов.
+            <br><br>
+            <b>Решение</b><br>Разработала ETL-пайплайн на Python. Настроила сбор данных через API hh.ru, разработала логику "умного фильтра" (расстояние Левенштейна, приоритет слов-исключений) для отсева нерелевантных вакансий, реализовала генерацию уникальных писем через GigaChat API. Реализовала fallback на шаблон при малом остатке токенов. Настроила пост-обработку текста через pymorphy3 (морфология). Спроектировала нормализованную ER-модель базы данных (4 таблицы с внешними ключами). Хранение истории откликов в PostgreSQL. Использовала ThreadPoolExecutor для многопоточности, contextmanager для работы с БД, модульную архитектуру (SRP). Покрыла код 107 тестами. Реализовала полную изоляцию файловой системы, чтобы тесты не ломали реальные данные. Организовала логирование, атомарную запись файлов, обработку сетевых сбоев и лимитов API.
+            <br><br>
+            <b>Стек</b><br>Python, PostgreSQL, GigaChat API, Docker, pytest, ThreadPoolExecutor.
+            <br><br>
+            <b>Ссылка:</b> <a href="https://github.com/ElenaPhoenix/hh-assistant" target="_blank">GitHub Repository</a>
+            </p>
           </div>
         </details>
       </div>
@@ -588,168 +577,174 @@
         <details class="experience-item">
           <summary>
             <div class="summary-wrapper">
-              <div class="summary-title">NDA (Международная IT-компания, GameFi)</div>
+              <div class="summary-title">NDA (Международная IT-компания, GameFi), Москва</div>
               <span class="summary-date">Фев 2023 - наст. время</span>
             </div>
             <div class="summary-subtitle">Аналитик данных</div>
           </summary>
           <div class="details-content">
-            <p class="content-text whitespace-pre">
-Работала с 5 отделами (поддержка, модерация, продажи, комьюнити, автоматизация).
-
-<b>Обязанности</b>
-Аналитика и отчетность
-- Проводила ad-hoc исследования и когортный анализ для оценки поведения пользователей.
-- Строила продуктовые воронки и сегментировала клиентов.
-- Выявляла тренды, аномалии и формулировала гипотезы.
-- Контролировала качество данных, выявляла инциденты.
-- Разрабатывала и поддерживала BI-отчеты для бизнес-пользователей.
-- Собирала, верифицировала и формализовала бизнес-требования.
-
-Автоматизация процессов
-- Создала систему автоматизированной отчетности: от разрозненных таблиц к дашбордам в Google Sheets и Google Data Studio.
-- Внедрила систему сбора обращений поддержки: сотрудники - структурированные таблицы - агрегация через скрипты - дашборд в реальном времени.
-- Оптимизировала ETL-процессы для подготовки данных.
-- Настроила интеграцию Jira и Confluence.
-
-Администрирование и управление знаниями
-- Администрировала Jira (доступы, проекты, ведение спринтов, доски, фильтры, дашборды) и Confluence (доступы, права, структура, макросы).
-- Создала базу знаний для 2 отделов с нуля (отделы продаж и модерации; процедуры, паспорта позиций, чек-листы и др.).
-- Проводила ретроспективы и презентовала результаты руководству.
-- Выступала координатором и бизнес-ассистентом руководителя.
-
-<b>Достижения</b>
-- Автоматизировала ручные отчеты в 4 отделах (отделы поддержки, модерации, продаж, комьюнити) - продуктивность выросла на 20%.
-- Сократила время подготовки аналитики в 4 раза (отдел модерации) за счет дашбордов.
-- Сократила время обработки обращений поддержки с 8 часов до 1 часа в неделю.
-- Создала базу знаний для 2 отделов (50+ статей, процедуры, паспорта позиций).
-- Обучила 6 сотрудников работе с BI-инструментами.
-- Внедрила отчетность для продаж - бизнес перешел к управлению на основе данных.
-
-<span class="stack-text"><b>Стек:</b> SQL, Python (NumPy, Pandas), JavaScript, API, Google Sheets, Google Docs, Google Data Studio, Microsoft Excel, Yandex DataLens, Intercom, AppsFlyer, корпоративная административная система, Miro, n8n, BPMN, Atlassian Jira, Atlassian Confluence, Agile.</span></p>
+            <p class="content-text">
+            Работала с 5 отделами (поддержка, модерация, продажи, комьюнити, автоматизация).
+            <br><br>
+            <b>Обязанности</b><br>
+            Аналитика и отчетность
+            - Проводила ad-hoc исследования и когортный анализ для оценки поведения пользователей.
+            - Строила продуктовые воронки и сегментировала клиентов.
+            - Выявляла тренды, аномалии и формулировала гипотезы.
+            - Контролировала качество данных, выявляла инциденты.
+            - Разрабатывала и поддерживала BI-отчеты для бизнес-пользователей.
+            - Собирала, верифицировала и формализовала бизнес-требования.
+            <br><br>
+            Автоматизация процессов
+            - Создала систему автоматизированной отчетности: от разрозненных таблиц к дашбордам в Google Sheets и Google Data Studio.
+            - Внедрила систему сбора обращений поддержки: сотрудники - структурированные таблицы - агрегация через скрипты - дашборд в реальном времени.
+            - Оптимизировала ETL-процессы для подготовки данных.
+            - Настроила интеграцию Jira и Confluence.
+            <br><br>
+            Администрирование и управление знаниями
+            - Администрировала Jira (доступы, проекты, ведение спринтов, доски, фильтры, дашборды) и Confluence (доступы, права, структура, макросы).
+            - Создала базу знаний для 2 отделов с нуля (отделы продаж и модерации; процедуры, паспорта позиций, чек-листы и др.).
+            - Проводила ретроспективы и презентовала результаты руководству.
+            - Выступала координатором и бизнес-ассистентом руководителя.
+            <br><br>
+            <b>Достижения</b><br>
+            - Автоматизировала ручные отчеты в 4 отделах (отделы поддержки, модерации, продаж, комьюнити) - продуктивность выросла на 20%.
+            - Сократила время подготовки аналитики в 4 раза (отдел модерации) за счет дашбордов.
+            - Сократила время обработки обращений поддержки с 8 часов до 1 часа в неделю.
+            - Создала базу знаний для 2 отделов (50+ статей, процедуры, паспорта позиций).
+            - Обучила 6 сотрудников работе с BI-инструментами.
+            - Внедрила отчетность для продаж - бизнес перешел к управлению на основе данных.
+            <br><br>
+            <b>Стек</b><br>SQL, Python (NumPy, Pandas), JavaScript, API, Google Sheets, Google Docs, Google Data Studio, Microsoft Excel, Yandex DataLens, Intercom, AppsFlyer, корпоративная административная система, Miro, n8n, BPMN, Atlassian Jira, Atlassian Confluence, Agile.
+            </p>
           </div>
         </details>
         
         <details class="experience-item">
           <summary>
             <div class="summary-wrapper">
-              <div class="summary-title">Комус</div>
+              <div class="summary-title">Комус, Москва</div>
               <span class="summary-date">Июн 2025 - Авг 2025</span>
             </div>
             <div class="summary-subtitle">Менеджер по управлению ресурсами</div>
           </summary>
           <div class="details-content">
-            <p class="content-text whitespace-pre">
-<b>Обязанности</b>
-- Подготавливала регулярную отчетность (план-факт) в Excel и SAP BO.
-- Проводила аудит Jira: проверяла корректность внесения трудозатрат, соответствие задач.
-- Анализировала доступность ресурсов на проекты.
-- Выполняла разовые поручения руководства: сбор данных и их анализ по запросу.
-- Вела внутренние справочники и инструкции в Confluence, поддерживать их в актуальном состоянии.
-
-<b>Достижения</b>
-Привела несколько документов в Confluence к единой структуре, исправила неточности и расхождения.
-
-<span class="stack-text"><b>Стек:</b> Excel (Power Pivot, Power Query), SAP BO, корпоративная административная система, Atlassian Jira, Atlassian Confluence.</span></p>
+            <p class="content-text">
+            <b>Обязанности</b><br>
+            - Подготавливала регулярную отчетность (план-факт) в Excel и SAP BO.
+            - Проводила аудит Jira: проверяла корректность внесения трудозатрат, соответствие задач.
+            - Анализировала доступность ресурсов на проекты.
+            - Выполняла разовые поручения руководства: сбор данных и их анализ по запросу.
+            - Вела внутренние справочники и инструкции в Confluence, поддерживать их в актуальном состоянии.
+            <br><br>
+            <b>Достижения</b><br>
+            Привела несколько документов в Confluence к единой структуре, исправила неточности и расхождения.
+            <br><br>
+            <b>Стек</b><br>Excel (Power Pivot, Power Query), SAP BO, корпоративная административная система, Atlassian Jira, Atlassian Confluence.
+            </p>
           </div>
         </details>
 
         <details class="experience-item">
           <summary>
             <div class="summary-wrapper">
-              <div class="summary-title">ПОиК ПиО ГУ МВД РФ</div>
+              <div class="summary-title">ПОиК ПиО ГУ МВД РФ, Москва</div>
               <span class="summary-date">Янв 2020 - Окт 2021</span>
             </div>
             <div class="summary-subtitle">Системный аналитик</div>
           </summary>
           <div class="details-content">
-            <p class="content-text whitespace-pre">
-<b>Обязанности</b>
-- Выполняла обязанности по осуществлению правопорядка.
-- Работала с первичной и внутренней документацией: предобработка, очистка и подготовка данных для дальнейшего анализа.
-- Переводила данные с бумажных носителей в электронный вид.
-
-<b>Достижения</b>
-Скорость поиска запрашиваемой информации улучшилась с нескольких дней до нескольких минут.
-
-<span class="stack-text"><b>Стек:</b> MS Office, внутренние базы данных.</span></p>
+            <p class="content-text">
+            <b>Обязанности</b><br>
+            - Выполняла обязанности по осуществлению правопорядка.
+            - Работала с первичной и внутренней документацией: предобработка, очистка и подготовка данных для дальнейшего анализа.
+            - Переводила данные с бумажных носителей в электронный вид.
+            <br><br>
+            <b>Достижения</b><br>
+            Скорость поиска запрашиваемой информации улучшилась с нескольких дней до нескольких минут.
+            <br><br>
+            <b>Стек</b><br>MS Office, внутренние базы данных.
+            </p>
           </div>
         </details>
 
         <details class="experience-item">
           <summary>
             <div class="summary-wrapper">
-              <div class="summary-title">Т-Банк</div>
+              <div class="summary-title">Т-Банк, Москва</div>
               <span class="summary-date">Май 2019 - Окт 2019</span>
             </div>
             <div class="summary-subtitle">Специалист чат-поддержки</div>
           </summary>
           <div class="details-content">
-            <p class="content-text whitespace-pre">
-<b>Обязанности</b>
-- Обеспечивала многоканальную поддержку (до 5 чатов) с соблюдением SLA.
-- Решала сложные запросы: блокировки, оспаривания, технические сбои.
-- Выявляла потребности клиентов и предлагала кросс-продукты.
-- Предотвращала эскалацию конфликтов.
-
-<b>Достижения</b>
-По результатам работы получила положительные отзывы на независимом портале Банки.ру и была премирована.
-
-<span class="stack-text"><b>Стек:</b> Jira, банковские CRM-системы.</span></p>
+            <p class="content-text">
+            <b>Обязанности</b><br>
+            - Обеспечивала многоканальную поддержку (до 5 чатов) с соблюдением SLA.
+            - Решала сложные запросы: блокировки, оспаривания, технические сбои.
+            - Выявляла потребности клиентов и предлагала кросс-продукты.
+            - Предотвращала эскалацию конфликтов.
+            <br><br>
+            <b>Достижения</b><br>
+            По результатам работы получила положительные отзывы на независимом портале Банки.ру и была премирована.
+            <br><br>
+            <b>Стек</b><br>Jira, банковские CRM-системы.
+            </p>
           </div>
         </details>
 
         <details class="experience-item">
           <summary>
             <div class="summary-wrapper">
-              <div class="summary-title">ХимПартнеры</div>
+              <div class="summary-title">ХимПартнеры, Москва</div>
               <span class="summary-date">Янв 2018 - Июл 2018</span>
             </div>
             <div class="summary-subtitle">Операционный менеджер</div>
           </summary>
           <div class="details-content">
-            <p class="content-text whitespace-pre">
-<b>Обязанности</b>
-- Координировала отгрузки товара и логистику (морские и сухопутные перевозки).
-- Подготавливала документы для таможенных органов.
-- Взаимодействовала с поставщиками и логистическими компаниями по корректности заполнения документов, срокам поставки груза.
-- Контролировала соблюдение сроков поставки.
-
-<b>Достижения</b>
-Все грузы поставлены в срок.
-
-<span class="stack-text"><b>Стек:</b> MS Office.</span></p>
+            <p class="content-text">
+            <b>Обязанности</b><br>
+            - Координировала отгрузки товара и логистику (морские и сухопутные перевозки).
+            - Подготавливала документы для таможенных органов.
+            - Взаимодействовала с поставщиками и логистическими компаниями по корректности заполнения документов, срокам поставки груза.
+            - Контролировала соблюдение сроков поставки.
+            <br><br>
+            <b>Достижения</b><br>
+            Все грузы поставлены в срок.
+            <br><br>
+            <b>Стек</b><br>MS Office.
+            </p>
           </div>
         </details>
 
         <details class="experience-item">
           <summary>
             <div class="summary-wrapper">
-              <div class="summary-title">Мясной мир</div>
+              <div class="summary-title">Мясной мир, Москва</div>
               <span class="summary-date">Июл 2012 - Дек 2017</span>
             </div>
             <div class="summary-subtitle">Менеджер по ВЭД</div>
           </summary>
           <div class="details-content">
-            <p class="content-text whitespace-pre">
-Начинала с должности офис-менеджера, через 5 месяцев переведена на позицию менеджера по внешнеэкономической деятельности.
-
-<b>Обязанности</b>
-- Проводила переговоры с иностранными поставщиками и логистическими компаниями, заключала контракты.
-- Закупала мясосырье у иностранных поставщиков.
-- Рассчитывала себестоимость товара и таможенные платежи.
-- Участвовала в таможенной очистке грузов.
-- Контролировала логистику (морские, сухопутные перевозки).
-- Анализировала и планировала складские остатки.
-- Вела реестр платежей.
-- Создала в Excel единую систему отслеживания грузов: от закупки до постановки на склад.
-
-<b>Достижения</b>
-Получен сертификат «Импортер 2014 года» по группе товаров.
-Все поставки сырья осуществлялись своевременно, без простоев.
-Закупка сырья по ценам ниже рыночных.
-
-<span class="stack-text"><b>Стек:</b> MS Office.</span></p>
+            <p class="content-text">
+            Начинала с должности офис-менеджера, через 5 месяцев переведена на позицию менеджера по внешнеэкономической деятельности.
+            <br><br>
+            <b>Обязанности</b><br>
+            - Проводила переговоры с иностранными поставщиками и логистическими компаниями, заключала контракты.
+            - Закупала мясосырье у иностранных поставщиков.
+            - Рассчитывала себестоимость товара и таможенные платежи.
+            - Участвовала в таможенной очистке грузов.
+            - Контролировала логистику (морские, сухопутные перевозки).
+            - Анализировала и планировала складские остатки.
+            - Вела реестр платежей.
+            - Создала в Excel единую систему отслеживания грузов: от закупки до постановки на склад.
+            <br><br>
+            <b>Достижения</b><br>
+            Получен сертификат «Импортер 2014 года» по группе товаров.
+            Все поставки сырья осуществлялись своевременно, без простоев.
+            Закупка сырья по ценам ниже рыночных.
+            <br><br>
+            <b>Стек</b><br>MS Office.
+            </p>
           </div>
         </details>
 
@@ -760,7 +755,7 @@
         
         <div class="experience-item" style="border-bottom: none; padding-bottom: 0;">
           <div class="item-header">
-            <span class="item-title">Саратовский государственный университет им. Н.Г. Чернышевского</span>
+            <span class="item-title">Саратовский государственный университет им. Н.Г. Чернышевского, Саратов</span>
             <span class="item-date">2010</span>
           </div>
           <div class="item-subtitle">Социально-культурный сервис и туризм</div>
