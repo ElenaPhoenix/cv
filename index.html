@@ -112,7 +112,7 @@
     .lang-link:hover { color: var(--color-turquoise-dark); }
     .flag-svg { border-radius: 2px; }
 
-    /* ЛЕВАЯ КОЛОНКА (ЗАПОМНИЛ, НЕ МЕНЯЮ) */
+    /* ЛЕВАЯ КОЛОНКА */
     .sidebar {
       flex: 0 0 35%;
       background-color: var(--color-dark);
@@ -225,7 +225,7 @@
       width: 100%;
       font-family: inherit;
       transition: all 0.2s;
-      margin-top: 10px;
+      /* margin-top: 10px; УБРАНО */
     }
     .pdf-download-btn:hover {
       background-color: var(--color-turquoise);
@@ -287,7 +287,6 @@
 
     .whitespace-pre { white-space: pre-line; }
 
-    /* ВЕРТИКАЛЬНАЯ ЛИНИЯ */
     .achievements-box {
       position: relative;
       padding-left: 20px; 
@@ -319,7 +318,6 @@
       margin-top: -2px;
     }
 
-    /* УНИВЕРСАЛЬНЫЙ БЛОК С ДАТАМИ */
     .item-header {
       display: grid;
       grid-template-columns: 1fr auto;
@@ -346,7 +344,6 @@
       margin-bottom: 8px;
     }
 
-    /* Аккордеон */
     details.experience-item {
       border-bottom: 1px solid var(--color-bg-light);
       padding: 10px 0;
@@ -408,7 +405,6 @@
       border-left: 2px solid var(--color-bg-light);
     }
 
-    /* СТИЛИ ДЛЯ ПЕЧАТИ */
     @media print {
       body { background-color: #fff; }
       #section-resume { padding: 0; display: block; min-height: auto; }
